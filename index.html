@@ -1,269 +1,489 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset=""UTF-8>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Website</title>
+    <title>Varnica Sharma - Data Science Portfolio</title>
+    <meta name="description" content="Varnica Sharma - M.Sc. Data Science student specializing in Machine Learning, Healthcare AI, and Deep Learning projects">
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- ----------header----------- -->
-    <header>
-        <img src="images/logo.png" class="logo">
-        <ul class="navlist">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Theme Toggle -->
+    <div class="theme-toggle" id="theme-toggle">
+        <i class="fas fa-moon" id="theme-icon"></i>
+    </div>
+
+    <!-- Header with Glassmorphism -->
+    <header class="glass-header">
+        <div class="logo-container">
+            <span class="logo-text">Varnica</span>
+        </div>
+        <ul class="navlist glass">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
-        <div id="menu-icon" class="bx bx-menu"></div>
+        <div id="menu-icon" class="bx bx-menu glass-btn"></div>
     </header>
 
-    <!-- -----------home section----------- -->
+    <!-- Hero Section with Advanced Animations -->
     <section id="home" class="home">
-        <div class="home-content">
-            <h1>Hi! I'm Varnica,</h1>
-            <div class="change-text">
-                <h3><span class="word">Data Science Enthusiast</span></h3>
-            </div>
+        <div class="hero-container">
+            <div class="home-content">
+                <div class="availability-badge glass">
+                    <i class="fas fa-circle pulse"></i>
+                    <span>Available for Opportunities</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    Hi, I'm <span class="name-gradient">Varnica Sharma</span>
+                </h1>
+                
+                <div class="typing-container">
+                    <h2 class="hero-subtitle">
+                        <span class="typing-text"></span>
+                        <span class="cursor">|</span>
+                    </h2>
+                </div>
 
-            <p>and I'm a passionate and driven individual with a strong foundation in data analysis, exploring the power of data to solve real-world problems.</p>
+                <p class="hero-description">
+                    M.Sc. Data Science student passionate about transforming healthcare through intelligent data solutions and cutting-edge machine learning research.
+                </p>
 
-                <div class="info-box">
-                    <div class="email-info">
-                        <h5>Email :</h5>
-                        <span>varnicasharma1515@gmail.com</span>
+                <div class="stats-container glass">
+                    <div class="stat-item">
+                        <span class="stat-number counter" data-target="2">0</span><span class="stat-symbol">+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number counter" data-target="10">0</span><span class="stat-symbol">+</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number counter" data-target="87">0</span><span class="stat-symbol">%</span>
+                        <span class="stat-label">Success Rate</span>
                     </div>
                 </div>
 
-                <div class="btn-box">
-                    <a href="images/Varnica_Resume.pdf" download class="btn">Download CV</a>
+                <div class="cta-buttons">
+                    <a href="images/Varnica_Resume.pdf" download class="btn btn-primary glass-btn">
+                        <i class="fas fa-download"></i>
+                        <span>Download Resume</span>
+                    </a>
+                    <a href="#projects" class="btn btn-secondary glass-btn">
+                        <i class="fas fa-rocket"></i>
+                        <span>View Projects</span>
+                    </a>
                 </div>
 
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/varnica-sharma/"><i class='bx bxl-linkedin' ></i></a>
-                    <a href="https://github.com/varnica-sharma"><i class='bx bxl-github' ></i></a>
-                    <a href="https://www.instagram.com/varnicasharma_/"><i class='bx bxl-instagram'></i></a>
-                    <a href="https://twitter.com/Varnie_15"><i class='bx bxl-twitter'></i></a> 
+                <div class="social-links">
+                    <a href="https://github.com/varnica-sharma" target="_blank" class="social-icon glass">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/varnica-sharma/" target="_blank" class="social-icon glass">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:varnicasharma1515@gmail.com" class="social-icon glass">
+                        <i class="fas fa-envelope"></i>
+                    </a>
                 </div>
-
-        </div>
-
-        <div class="home-image">
-            <div class="img-box">
-                <img src="images/pic.png" alt="">
-            </div>
-            
-            <div class="liquid-shape">
-                <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
-                <path fill="#12f7ff">
-                    <animate attributeName="d"
-                        dur="20000ms"
-                        repeatCount="indefinite"
-                        values="
-                        M404.5,280Q395,310,391,348.5Q387,387,357.5,413Q328,439,289,422Q250,405,219.5,401.5Q189,398,135.5,408Q82,418,71.5,373Q61,328,58,289Q55,250,50.5,208Q46,166,82,142Q118,118,140,78Q162,38,206,57Q250,76,296,52Q342,28,354,81Q366,134,417.5,146.5Q469,159,441.5,204.5Q414,250,404.5,280Z;
-
-                        M421.5,288.5Q436,327,428.5,374Q421,421,379.5,442Q338,463,294,477Q250,491,216,452.5Q182,414,144,404Q106,394,96,356Q86,318,83.5,284Q81,250,94,220.5Q107,191,123.5,165.5Q140,140,155.5,99.5Q171,59,210.5,69.5Q250,80,295,56.5Q340,33,367.5,69Q395,105,395.5,147Q396,189,401.5,219.5Q407,250,421.5,288.5Z;
-
-                        M459,295.5Q470,341,418,353.5Q366,366,345.5,399Q325,432,287.5,465.5Q250,499,206.5,479.5Q163,460,135.5,426Q108,392,77,363Q46,334,30,292Q14,250,20.5,204Q27,158,81,146.5Q135,135,154,99.5Q173,64,211.5,77.5Q250,91,293,66.5Q336,42,363.5,75.5Q391,109,406.5,144Q422,179,435,214.5Q448,250,459,295.5Z;
-
-                        M408,279.5Q391,309,374,333Q357,357,346.5,406.5Q336,456,293,446.5Q250,437,219.5,417.5Q189,398,150,393.5Q111,389,73.5,363.5Q36,338,51,294Q66,250,74,215Q82,180,92,141Q102,102,133.5,73Q165,44,207.5,29Q250,14,288.5,39Q327,64,348,97.5Q369,131,406.5,150.5Q444,170,434.5,210Q425,250,408,279.5Z;
-
-                        M418,286Q424,322,415.5,364.5Q407,407,373.5,437.5Q340,468,295,467.5Q250,467,215,443.5Q180,420,129,421Q78,422,75,373Q72,324,46,287Q20,250,23.5,204Q27,158,81.5,147Q136,136,163,120Q190,104,220,65.5Q250,27,294,32.5Q338,38,355.5,82.5Q373,127,418,144.5Q463,162,437.5,206Q412,250,418,286Z;
-
-                        M439,291Q448,332,412,354Q376,376,359.5,425Q343,474,296.5,456.5Q250,439,215.5,428Q181,417,143,406Q105,395,66.5,368.5Q28,342,21.5,296Q15,250,31,208Q47,166,66.5,126Q86,86,124,61.5Q162,37,206,40Q250,43,289.5,51Q329,59,347,97Q365,135,386.5,159.5Q408,184,419,217Q430,250,439,291Z;
-
-                        M470.5,290.5Q444,331,415.5,359Q387,387,363,425.5Q339,464,294.5,472.5Q250,481,219,441Q188,401,157,387.5Q126,374,83.5,355.5Q41,337,32.5,293.5Q24,250,26.5,204Q29,158,65.5,130Q102,102,135,77Q168,52,209,50Q250,48,286.5,61Q323,74,356,92.5Q389,111,429.5,135Q470,159,483.5,204.5Q497,250,470.5,290.5Z;
-
-                        M428.5,284.5Q416,319,414,365.5Q412,412,369.5,423.5Q327,435,288.5,443Q250,451,204.5,460.5Q159,470,147.5,417Q136,364,114,340Q92,316,51,283Q10,250,26.5,207Q43,164,93.5,154Q144,144,162.5,113Q181,82,215.5,59.5Q250,37,294.5,36Q339,35,350.5,86.5Q362,138,414.5,149Q467,160,454,205Q441,250,428.5,284.5Z;
-
-                        M480.5,296Q472,342,441,376Q410,410,375.5,439.5Q341,469,295.5,457.5Q250,446,208.5,448Q167,450,150.5,408Q134,366,110.5,342Q87,318,54,284Q21,250,54.5,216.5Q88,183,114,161.5Q140,140,164,120Q188,100,219,82Q250,64,295.5,47Q341,30,363,72.5Q385,115,391.5,152Q398,189,443.5,219.5Q489,250,480.5,296Z;
-                        
-                        M404.5,280Q395,310,391,348.5Q387,387,357.5,413Q328,439,289,422Q250,405,219.5,401.5Q189,398,135.5,408Q82,418,71.5,373Q61,328,58,289Q55,250,50.5,208Q46,166,82,142Q118,118,140,78Q162,38,206,57Q250,76,296,52Q342,28,354,81Q366,134,417.5,146.5Q469,159,441.5,204.5Q414,250,404.5,280Z;
-                        "
-                    ></animate>
-                </path>
-                </svg>
             </div>
 
-            <div class="liquid-shape">
-                <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
-                <path fill="#12f7ff">
-                    <animate attributeName="d"
-                        dur="20000ms"
-                        repeatCount="indefinite"
-                        values="
-                        M404.5,280Q395,310,391,348.5Q387,387,357.5,413Q328,439,289,422Q250,405,219.5,401.5Q189,398,135.5,408Q82,418,71.5,373Q61,328,58,289Q55,250,50.5,208Q46,166,82,142Q118,118,140,78Q162,38,206,57Q250,76,296,52Q342,28,354,81Q366,134,417.5,146.5Q469,159,441.5,204.5Q414,250,404.5,280Z;
-
-                        M421.5,288.5Q436,327,428.5,374Q421,421,379.5,442Q338,463,294,477Q250,491,216,452.5Q182,414,144,404Q106,394,96,356Q86,318,83.5,284Q81,250,94,220.5Q107,191,123.5,165.5Q140,140,155.5,99.5Q171,59,210.5,69.5Q250,80,295,56.5Q340,33,367.5,69Q395,105,395.5,147Q396,189,401.5,219.5Q407,250,421.5,288.5Z;
-
-                        M459,295.5Q470,341,418,353.5Q366,366,345.5,399Q325,432,287.5,465.5Q250,499,206.5,479.5Q163,460,135.5,426Q108,392,77,363Q46,334,30,292Q14,250,20.5,204Q27,158,81,146.5Q135,135,154,99.5Q173,64,211.5,77.5Q250,91,293,66.5Q336,42,363.5,75.5Q391,109,406.5,144Q422,179,435,214.5Q448,250,459,295.5Z;
-
-                        M408,279.5Q391,309,374,333Q357,357,346.5,406.5Q336,456,293,446.5Q250,437,219.5,417.5Q189,398,150,393.5Q111,389,73.5,363.5Q36,338,51,294Q66,250,74,215Q82,180,92,141Q102,102,133.5,73Q165,44,207.5,29Q250,14,288.5,39Q327,64,348,97.5Q369,131,406.5,150.5Q444,170,434.5,210Q425,250,408,279.5Z;
-
-                        M418,286Q424,322,415.5,364.5Q407,407,373.5,437.5Q340,468,295,467.5Q250,467,215,443.5Q180,420,129,421Q78,422,75,373Q72,324,46,287Q20,250,23.5,204Q27,158,81.5,147Q136,136,163,120Q190,104,220,65.5Q250,27,294,32.5Q338,38,355.5,82.5Q373,127,418,144.5Q463,162,437.5,206Q412,250,418,286Z;
-
-                        M439,291Q448,332,412,354Q376,376,359.5,425Q343,474,296.5,456.5Q250,439,215.5,428Q181,417,143,406Q105,395,66.5,368.5Q28,342,21.5,296Q15,250,31,208Q47,166,66.5,126Q86,86,124,61.5Q162,37,206,40Q250,43,289.5,51Q329,59,347,97Q365,135,386.5,159.5Q408,184,419,217Q430,250,439,291Z;
-
-                        M470.5,290.5Q444,331,415.5,359Q387,387,363,425.5Q339,464,294.5,472.5Q250,481,219,441Q188,401,157,387.5Q126,374,83.5,355.5Q41,337,32.5,293.5Q24,250,26.5,204Q29,158,65.5,130Q102,102,135,77Q168,52,209,50Q250,48,286.5,61Q323,74,356,92.5Q389,111,429.5,135Q470,159,483.5,204.5Q497,250,470.5,290.5Z;
-
-                        M428.5,284.5Q416,319,414,365.5Q412,412,369.5,423.5Q327,435,288.5,443Q250,451,204.5,460.5Q159,470,147.5,417Q136,364,114,340Q92,316,51,283Q10,250,26.5,207Q43,164,93.5,154Q144,144,162.5,113Q181,82,215.5,59.5Q250,37,294.5,36Q339,35,350.5,86.5Q362,138,414.5,149Q467,160,454,205Q441,250,428.5,284.5Z;
-
-                        M480.5,296Q472,342,441,376Q410,410,375.5,439.5Q341,469,295.5,457.5Q250,446,208.5,448Q167,450,150.5,408Q134,366,110.5,342Q87,318,54,284Q21,250,54.5,216.5Q88,183,114,161.5Q140,140,164,120Q188,100,219,82Q250,64,295.5,47Q341,30,363,72.5Q385,115,391.5,152Q398,189,443.5,219.5Q489,250,480.5,296Z;
-                        
-                        M404.5,280Q395,310,391,348.5Q387,387,357.5,413Q328,439,289,422Q250,405,219.5,401.5Q189,398,135.5,408Q82,418,71.5,373Q61,328,58,289Q55,250,50.5,208Q46,166,82,142Q118,118,140,78Q162,38,206,57Q250,76,296,52Q342,28,354,81Q366,134,417.5,146.5Q469,159,441.5,204.5Q414,250,404.5,280Z;
-                        "
-                    ></animate>
-                </path>
-                </svg>
+            <!-- Interactive 3D Visual Element -->
+            <div class="hero-visual">
+                <div class="floating-elements">
+                    <div class="float-item" data-speed="2">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="float-item" data-speed="3">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="float-item" data-speed="1.5">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="float-item" data-speed="2.5">
+                        <i class="fas fa-database"></i>
+                    </div>
+                </div>
+                <div class="hologram-effect"></div>
             </div>
         </div>
 
-
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
     </section>
 
-    <!-- ----------------about section---------------- -->
-    <div id="about">
+    <!-- About Section with Cards -->
+    <section id="about" class="about-section">
         <div class="container">
-            <div class="row">
-                <div class="about-col-1">
-                    <img src="images/2.jpg">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Passionate about extracting insights from data</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-content">
+                    <div class="about-text glass">
+                        <h3>Data Science Graduate Student</h3>
+                        <p>Currently pursuing M.Sc. in Data Science at Manipal Academy of Higher Education, with a strong foundation in Computer Science, Statistics, and Mathematics from Chandigarh University.</p>
+                        
+                        <p>I specialize in building intelligent healthcare AI solutions, with hands-on experience in deep learning, graph neural networks, and personalized prediction systems.</p>
+                        
+                        <div class="education-timeline">
+                            <div class="timeline-item glass">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>M.Sc. Data Science</h4>
+                                    <span class="timeline-date">2024 - 2026</span>
+                                    <p>Manipal Academy of Higher Education</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item glass">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>B.Sc. Computer Science</h4>
+                                    <span class="timeline-date">2021 - 2024</span>
+                                    <p>Chandigarh University</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="about-col-2">
-                    <h1 class="sub-title">About Me</h1>
-                    <p>I am proficient in programming languages such as Python 
-                        and R, and have experience with popular data science 
-                        libraries and tools like pandas, scikit-learn, TensorFlow,
-                        and Tableau. With a background in computer science, 
-                        statistics and mathematics, I have developed a solid 
-                        understanding of statistical methods, machine learning
-                        techniques, and data visualization.</p>
 
-<!-- ----------------skill section---------------- -->
-
-                        <div class="tab-titles">
-                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                            <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                <div class="skills-container">
+                    <!-- Technical Skills -->
+                    <div class="skill-category glass">
+                        <h3><i class="fas fa-code"></i> Technical Skills</h3>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <span class="skill-name">Python</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Machine Learning</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Deep Learning</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">PyTorch</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="88%"></div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="tab-contents active-tab" id="skills">
-                            <ul>
-                                <li><span>Languages</span><br>Python, HTML, Machine Learning, Java, SQL</li>
-                                <li><span>Areas of Interest</span><br>Data Science, Data Analysis, Data Visualization, Machine Learning, Web Scraping</li>
-                                <li><span>Tools</span><br>Excel, Tableau, VScode, Kaggle, Github</li>
-                                <li><span>Soft-skills</span><br>Problem solving, Adaptability, Management</li>
-                            </ul>
+                    </div>
+
+                    <!-- Tools & Frameworks -->
+                    <div class="skill-category glass">
+                        <h3><i class="fas fa-tools"></i> Tools & Frameworks</h3>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Streamlit</span>
+                            <span class="tech-badge">Jupyter</span>
+                            <span class="tech-badge">PyTorch Geometric</span>
+                            <span class="tech-badge">SHAP</span>
+                            <span class="tech-badge">Power BI</span>
+                            <span class="tech-badge">Google Colab</span>
+                            <span class="tech-badge">VS Code</span>
+                            <span class="tech-badge">Git</span>
                         </div>
-                        <div class="tab-contents" id="experience">
-                            <ul>
-                                <li><span>Sep-Oct 2023</span><br>Data Science Virtual Internship at <span style="display:contents; color: #3EA99F;">Bharat Intern</span></li>
-                                <li><span>Oct-Nov 2023</span><br>Data Science Virtial Internship at <span style="display:contents; color: #3EA99F;">Code Clause</span></li>
-                            </ul>
+                    </div>
+
+                    <!-- Experience -->
+                    <div class="skill-category glass">
+                        <h3><i class="fas fa-briefcase"></i> Experience</h3>
+                        <div class="experience-list">
+                            <div class="exp-item">
+                                <h4>Data Science Intern</h4>
+                                <span class="exp-company">Code Clause</span>
+                                <span class="exp-date">Oct 2023 - Nov 2023</span>
+                            </div>
+                            <div class="exp-item">
+                                <h4>Data Science Intern</h4>
+                                <span class="exp-company">Bharat Intern</span>
+                                <span class="exp-date">Sep 2023 - Oct 2023</span>
+                            </div>
                         </div>
-                        <div class="tab-contents" id="education">
-                            <ul>
-                                <li><span>2021-2024</span><br>B.Sc. in Computer Science, Statistics and Mathematics</li>
-                            </ul>
-                        </div>
-
-<script>
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
-
-    function opentab(tabname){
-        for(tablink of tablinks){
-            tablink.classList.remove("active-link");
-        }
-        for(tabcontent of tabcontents){
-            tabcontent.classList.remove("active-tab");
-        }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab");
-    }
-
-</script>
-
-<!-- ------------Project section---------- -->
-
-<section id="projects" class="projects">
-    <div class="main-text">
-        <h1>My Projects</h1>
-    </div>
-    <div class="project-gallery">
-        <div class="port-box">
-            <div class="port-image">
-                <img src="images/cuisine.jpg" alt="">
-            </div>
-            <div class="port-content">
-                <h3>Restaurant Recommender System</h3>
-                <p>Based on users' input of restaurants, recommending
-                    other restaurants with similar cuisines.</p>
-                <a href="https://github.com/varnica-sharma/Restaurant-Recommender-System"><i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="port-box">
-            <div class="port-image">
-                <img src="images/4.jpg" alt="">
+    <!-- Projects Section with Advanced Cards -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Innovative solutions in healthcare AI and machine learning</p>
             </div>
-            <div class="port-content">
-                <h3>Coming Soon...</h3>
-                <a href="#"><i class='bx bx-link-external'></i></a>
+
+            <div class="projects-grid">
+                <!-- Featured Project 1 -->
+                <div class="project-card featured glass" data-category="healthcare">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <span class="featured-badge">
+                            <i class="fas fa-star"></i>
+                            Featured
+                        </span>
+                    </div>
+                    
+                    <div class="project-content">
+                        <h3 class="project-title">Multi-Omics Graph Fusion for Alzheimer's Diagnosis</h3>
+                        <p class="project-description">
+                            Built an advanced GCN-based predictive model to classify Alzheimer's disease stages using cognitive and demographic features from the ADNI dataset with 19,000+ patient records.
+                        </p>
+                        
+                        <div class="project-highlights">
+                            <span class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                87% Accuracy
+                            </span>
+                            <span class="highlight-item">
+                                <i class="fas fa-users"></i>
+                                19k+ Patients
+                            </span>
+                            <span class="highlight-item">
+                                <i class="fas fa-eye"></i>
+                                Early Detection
+                            </span>
+                        </div>
+
+                        <div class="tech-stack-project">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PyTorch Geometric</span>
+                            <span class="tech-tag">GNN</span>
+                            <span class="tech-tag">Streamlit</span>
+                        </div>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://multi-omics-alzheimer-diagnosis.streamlit.app" target="_blank" class="btn-project btn-live">
+                            <i class="fas fa-external-link-alt"></i>
+                            Live Demo
+                        </a>
+                        <a href="https://github.com/varnica-sharma" target="_blank" class="btn-project btn-code">
+                            <i class="fab fa-github"></i>
+                            View Code
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Featured Project 2 -->
+                <div class="project-card featured glass" data-category="healthcare">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-pills"></i>
+                        </div>
+                        <span class="featured-badge">
+                            <i class="fas fa-star"></i>
+                            Featured
+                        </span>
+                    </div>
+                    
+                    <div class="project-content">
+                        <h3 class="project-title">Personalized Chemotherapy Response Prediction</h3>
+                        <p class="project-description">
+                            Developed a personalized deep learning model to predict chemotherapy drug response using GDSC genomics and drug metadata with SHAP explainability.
+                        </p>
+                        
+                        <div class="project-highlights">
+                            <span class="highlight-item">
+                                <i class="fas fa-user-md"></i>
+                                Personalized
+                            </span>
+                            <span class="highlight-item">
+                                <i class="fas fa-chart-bar"></i>
+                                SHAP Analysis
+                            </span>
+                            <span class="highlight-item">
+                                <i class="fas fa-hospital"></i>
+                                Clinical Grade
+                            </span>
+                        </div>
+
+                        <div class="tech-stack-project">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">SHAP</span>
+                            <span class="tech-tag">Streamlit</span>
+                        </div>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://chemo-response-predictor.streamlit.app" target="_blank" class="btn-project btn-live">
+                            <i class="fas fa-external-link-alt"></i>
+                            Live Demo
+                        </a>
+                        <a href="https://github.com/varnica-sharma" target="_blank" class="btn-project btn-code">
+                            <i class="fab fa-github"></i>
+                            View Code
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Additional Project Placeholders -->
+                <div class="project-card glass" data-category="ml">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="project-content">
+                        <h3 class="project-title">Restaurant Recommender System</h3>
+                        <p class="project-description">
+                            Intelligent recommendation system that suggests restaurants based on cuisine similarity and user preferences using collaborative filtering.
+                        </p>
+                        
+                        <div class="tech-stack-project">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                        </div>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://github.com/varnica-sharma/Restaurant-Recommender-System" target="_blank" class="btn-project btn-code">
+                            <i class="fab fa-github"></i>
+                            View Code
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Coming Soon Card -->
+                <div class="project-card coming-soon glass">
+                    <div class="coming-soon-content">
+                        <div class="coming-soon-icon">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <h3>More Projects Coming Soon</h3>
+                        <p>Currently working on exciting new projects in computer vision and NLP</p>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="section-subtitle">Ready to collaborate? Let's build something amazing together!</p>
+            </div>
 
-    </div>
-</section>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card glass">
+                        <h3>Get In Touch</h3>
+                        <p>I'm always excited to discuss new opportunities, collaborations, and innovative projects in data science and AI.</p>
 
-<!-- ----------- Contact Section ----------- -->
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="method-details">
+                                    <span class="method-label">Email</span>
+                                    <a href="mailto:varnicasharma1515@gmail.com">varnicasharma1515@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
+                                <div class="method-details">
+                                    <span class="method-label">LinkedIn</span>
+                                    <a href="https://www.linkedin.com/in/varnica-sharma/" target="_blank">Connect with me</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div class="method-details">
+                                    <span class="method-label">GitHub</span>
+                                    <a href="https://github.com/varnica-sharma" target="_blank">View my repositories</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<section id="contact" class="contant">
-    <div class="main-text">
-        <h1>Contact Me!</h1>
-    </div>
+                <div class="contact-form-container">
+                    <form name="submit-to-google-sheet" class="contact-form glass">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" name="Name" placeholder="Your Name" required>
+                                <label>Full Name</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="Email" placeholder="Your Email" required>
+                                <label>Email Address</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="text" name="Subject" placeholder="Subject">
+                            <label>Subject</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
+                            <label>Message</label>
+                        </div>
 
-    <form name="submit-to-google-sheet">
-        <input type="text" name="Name" placeholder="Your Name" required>
-        <input type="text" name="Email" placeholder="Your Email" required>
-        <input type="number" name="Phone Number" placeholder="Phone Number">
-        <textarea name="Message" rows="10" placeholder="Your Message"></textarea>
-        <div class="btn-box formBtn">
-            <button type="submit" class="btn">Send Message</button>
+                        <button type="submit" class="btn btn-primary glass-btn submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Send Message</span>
+                        </button>
+                    </form>
+                    <div id="msg" class="form-message"></div>
+                </div>
+            </div>
         </div>
-    </form>
-    <span id="msg"></span>
-</section>
+    </section>
 
-<!-- ----------footer website---------- -->
+    <!-- Footer -->
+    <footer class="glass-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Varnica Sharma. All rights reserved. Built with passion and creativity.</p>
+                <a href="#home" class="back-to-top glass">
+                    <i class="fas fa-chevron-up"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
 
-<footer>
-    <p>Copyright &copy; 2023 by VarnicaSharma || All Rights Reserved.</p>
-    <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
-</footer>
-
-<script src="script.js"></script>
-
-<script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxzLfKeDBN8MNtEvFZf8F2J0xc0n18FD98EVWr1AS71cAAIPI9ZTZSLNuvCNtadUfPnVA/exec'
-    const form = document.forms['submit-to-google-sheet']
-    const msg = document.getElementById('msg')
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-            msg.innerHTML = "Message Sent Successfully"
-            setTimeout(function(){
-                msg.innerHTML = ""
-            },5000)
-            form.reset()
-        })
-        .catch(error => console.error('Error!', error.message))
-    })
-</script>
-
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
