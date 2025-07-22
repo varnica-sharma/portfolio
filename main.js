@@ -1,4 +1,4 @@
-// FLOATING TAGS HERO
+// FLOATING TAGS HERO (now spread in hero area only)
 const tags = [
   "Machine Learning", "Bioinformatics", "Graph Networks", "Deep Learning",
   "Data Mining", "Streamlit", "PyTorch", "Healthcare AI", "Statistics", "Visualization",
