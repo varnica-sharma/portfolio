@@ -309,10 +309,10 @@ body {
     opacity: 0.7;
 }
 
-/* Enhanced Role Display */
+/* FIXED ROLE DISPLAY WITH PROPER TYPING */
 .role-display {
     margin-bottom: var(--space-xl);
-    height: 80px;
+    min-height: 80px;
     display: flex;
     align-items: center;
 }
@@ -328,6 +328,7 @@ body {
 .typing-text {
     min-height: 1.5em;
     display: inline-block;
+    min-width: 200px;
 }
 
 .typing-cursor {
@@ -335,7 +336,7 @@ body {
     width: 3px;
     height: 1.5em;
     background: var(--cyan);
-    margin-left: 2px;
+    margin-left: 4px;
     animation: blink 1s infinite;
 }
 
@@ -577,7 +578,7 @@ body {
     white-space: nowrap;
 }
 
-/* ===== ENHANCED HERO VISUAL ===== */
+/* ===== ENHANCED HERO VISUAL WITH ANIMATED ELEMENTS ===== */
 .hero-visual {
     display: flex;
     align-items: center;
@@ -621,12 +622,14 @@ body {
 .node::after {
     content: '';
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 30px;
+    height: 30px;
     border: 2px solid var(--cyan);
     border-radius: 50%;
-    animation: pulse 2s infinite;
-    opacity: 0.5;
+    top: -5px;
+    left: -5px;
+    animation: nodePulse 3s infinite;
+    opacity: 0.4;
 }
 
 .tech-orbits {
@@ -678,41 +681,49 @@ body {
     cursor: pointer;
     transition: all var(--transition-normal);
     box-shadow: var(--glass-shadow);
+    animation: techFloat 4s ease-in-out infinite;
 }
 
 .tech-node:hover {
     transform: scale(1.2);
     box-shadow: var(--glass-shadow), var(--neon-glow);
+    animation-play-state: paused;
 }
 
 .ring-1 .tech-node {
     top: -25px;
     left: calc(50% - 25px);
+    animation-delay: 0s;
 }
 
 .ring-2 .tech-node:nth-child(1) {
     top: -25px;
     left: calc(50% - 25px);
+    animation-delay: -1s;
 }
 
 .ring-2 .tech-node:nth-child(2) {
     bottom: -25px;
     left: calc(50% - 25px);
+    animation-delay: -2s;
 }
 
 .ring-3 .tech-node:nth-child(1) {
     top: -25px;
     left: calc(50% - 25px);
+    animation-delay: -0.5s;
 }
 
 .ring-3 .tech-node:nth-child(2) {
     top: calc(50% - 25px);
     right: -25px;
+    animation-delay: -1.5s;
 }
 
 .ring-3 .tech-node:nth-child(3) {
     bottom: -25px;
     left: calc(50% - 25px);
+    animation-delay: -2.5s;
 }
 
 /* ===== ENHANCED ABOUT SECTION ===== */
@@ -1839,8 +1850,44 @@ body {
 }
 
 @keyframes nodeGlow {
-    0%, 100% { box-shadow: 0 0 5px var(--cyan); }
-    50% { box-shadow: 0 0 20px var(--cyan), 0 0 30px var(--cyan); }
+    0%, 100% { 
+        box-shadow: 0 0 10px var(--cyan); 
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 0 0 25px var(--cyan), 0 0 35px var(--cyan); 
+        transform: scale(1.1);
+    }
+}
+
+@keyframes nodePulse {
+    0%, 100% { 
+        opacity: 0.4; 
+        transform: scale(1); 
+    }
+    50% { 
+        opacity: 0.8; 
+        transform: scale(1.2); 
+    }
+}
+
+@keyframes techFloat {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg); 
+        box-shadow: var(--glass-shadow);
+    }
+    25% { 
+        transform: translateY(-8px) rotate(2deg); 
+        box-shadow: var(--glass-shadow), 0 0 15px rgba(0, 217, 255, 0.3);
+    }
+    50% { 
+        transform: translateY(-4px) rotate(-1deg); 
+        box-shadow: var(--glass-shadow), 0 0 20px rgba(0, 217, 255, 0.4);
+    }
+    75% { 
+        transform: translateY(-12px) rotate(1deg); 
+        box-shadow: var(--glass-shadow), 0 0 15px rgba(0, 217, 255, 0.3);
+    }
 }
 
 @keyframes progressPulse {
@@ -1974,6 +2021,15 @@ body {
     .exp-period {
         width: auto;
     }
+    
+    .tech-orbits {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .ring-1 { width: 120px; height: 120px; }
+    .ring-2 { width: 200px; height: 200px; }
+    .ring-3 { width: 280px; height: 280px; }
 }
 
 @media (max-width: 480px) {
@@ -1990,13 +2046,13 @@ body {
     }
     
     .tech-orbits {
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
     }
     
-    .ring-1 { width: 100px; height: 100px; }
-    .ring-2 { width: 180px; height: 180px; }
-    .ring-3 { width: 260px; height: 260px; }
+    .ring-1 { width: 80px; height: 80px; }
+    .ring-2 { width: 150px; height: 150px; }
+    .ring-3 { width: 220px; height: 220px; }
     
     .profile-card,
     .skill-cluster,
