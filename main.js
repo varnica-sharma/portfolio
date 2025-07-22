@@ -1,77 +1,65 @@
-// Animated Typewriter
-const roles = [
-    "AI Developer",
-    "Analytics Engineer",
-    "Data Storyteller",
-    "Business Insights Partner",
-    "Problem Solver"
+// Floating tags animation
+const tags = [
+  "Machine Learning",
+  "Bioinformatics",
+  "Graph Networks",
+  "Deep Learning",
+  "Data Mining",
+  "Streamlit",
+  "PyTorch",
+  "Healthcare AI",
+  "Statistics",
+  "Visualization"
 ];
-let roleIdx = 0, charPos = 0, del = false;
-function typeLoop() {
-    const el = document.getElementById("typed-txt");
-    if (!el) return;
-    let curr = roles[roleIdx];
-    if (!del) {
-        el.textContent = curr.slice(0, charPos + 1);
-        charPos++;
-        if (charPos === curr.length) {
-            del = true;
-            setTimeout(typeLoop, 1200);
-            return;
-        }
-    } else {
-        el.textContent = curr.slice(0, charPos - 1);
-        charPos--;
-        if (charPos === 0) {
-            roleIdx = (roleIdx + 1) % roles.length;
-            del = false;
-        }
-    }
-    setTimeout(typeLoop, del ? 45 : 110);
-}
-document.addEventListener('DOMContentLoaded', () => setTimeout(typeLoop, 240));
-
-// Skill bar animation
-function animateSkillBars() {
-    document.querySelectorAll('.bar-val').forEach(bar => {
-        let width = bar.dataset.width || 0;
-        bar.style.width = width + '%';
-    });
-}
-document.addEventListener('DOMContentLoaded', animateSkillBars);
-
-// Tabs
-function initTabs() {
-    let btns = document.querySelectorAll('.tab-btn');
-    let tabs = document.querySelectorAll('.tab-body');
-    btns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            btns.forEach(b => b.classList.remove('active'));
-            tabs.forEach(tab => tab.classList.remove('active'));
-            btn.classList.add('active');
-            document.getElementById(btn.dataset.tab).classList.add('active');
-            if(btn.dataset.tab === 'skills') setTimeout(animateSkillBars, 350);
-        });
-    });
-}
-document.addEventListener('DOMContentLoaded', initTabs);
-
-// Responsive menu
-const navBtn = document.getElementById('nav-toggle');
-const navList = document.getElementById('site-nav');
-navBtn.addEventListener('click', () => {
-    navList.classList.toggle('open');
-    navBtn.classList.toggle('active');
+const tagsContainer = document.getElementById('floating-tags');
+tags.forEach((text, idx) => {
+  const tag = document.createElement('div');
+  tag.className = 'float-tag';
+  tag.style.animationDelay = (idx * 0.5) + 's';
+  tag.innerHTML = `<i class='bx bx-badge-check'></i> ${text}`;
+  tagsContainer.appendChild(tag);
 });
-document.querySelectorAll('#site-nav a').forEach(link => {
-    link.addEventListener('click', () => {
-        navList.classList.remove('open');
-        navBtn.classList.remove('active');
-    })
-});
-window.addEventListener('resize', () => {
-    if (window.innerWidth > 700) {
-        navList.classList.remove('open');
-        navBtn.classList.remove('active');
+
+// Typewriter effect
+const roles = [
+  "Healthcare Data Specialist",
+  "Bioinformatics Enthusiast",
+  "AI & ML Innovator",
+  "Predictive Modeling Pro"
+];
+let roleIndex = 0, charIndex = 0, deleting = false;
+function typeWriter() {
+  const el = document.getElementById('typewriter');
+  if (!el) return;
+  const current = roles[roleIndex];
+  if (!deleting) {
+    el.textContent = current.substring(0, charIndex + 1);
+    if (++charIndex === current.length) {
+      deleting = true;
+      setTimeout(typeWriter, 1100);
+      return;
     }
+  } else {
+    el.textContent = current.substring(0, charIndex - 1);
+    if (--charIndex === 0) {
+      deleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+    }
+  }
+  setTimeout(typeWriter, deleting ? 47 : 113);
+}
+window.onload = typeWriter;
+
+// Highlight current nav section
+window.addEventListener('scroll', () => {
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('header nav a');
+  let cur = '';
+  sections.forEach(sec => {
+    if (window.scrollY + 90 >= sec.offsetTop) cur = sec.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.remove('active');
+    if (a.getAttribute('href') === `#${cur}`) a.classList.add('active');
+  });
 });
