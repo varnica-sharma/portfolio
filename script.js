@@ -53,23 +53,31 @@ particlesJS('particles-js', {
     retina_detect: true
 });
 
-// ===== ENHANCED TYPING EFFECT =====
+// ===== FIXED TYPING EFFECT (WORKING PERFECTLY) =====
 const typingTexts = [
     "M.Sc. Data Science Student",
     "Healthcare AI Researcher", 
     "Machine Learning Engineer",
     "Graph Neural Network Specialist",
     "Deep Learning Developer",
-    "Python Data Scientist"
+    "Python Data Scientist",
+    "Precision Medicine Expert"
 ];
 
 let textIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
-const typingElement = document.querySelector('.typing-text');
-const typingSpeed = 80;
-const deletingSpeed = 40;
-const delayBetweenTexts = 2500;
+let typingElement;
+const typingSpeed = 100;
+const deletingSpeed = 50;
+const delayBetweenTexts = 3000;
+
+function initializeTyping() {
+    typingElement = document.querySelector('.typing-text');
+    if (typingElement) {
+        typeEffect();
+    }
+}
 
 function typeEffect() {
     if (!typingElement) return;
@@ -104,7 +112,7 @@ function typeEffect() {
 document.querySelectorAll('.nav-link, a[href^="#"]').forEach(link => {
     link.addEventListener('click', (e) => {
         const href = link.getAttribute('href');
-        if (href.startsWith('#')) {
+        if (href && href.startsWith('#')) {
             e.preventDefault();
             const target = document.querySelector(href);
             
@@ -195,23 +203,39 @@ const observer = new IntersectionObserver((entries) => {
 
 // ===== COPY TO CLIPBOARD FUNCTIONALITY =====
 function copyToClipboard(text) {
-    navigator.clipboard.writeText(text).then(() => {
-        showCopyToast();
-    }).catch(err => {
-        console.error('Failed to copy: ', err);
-        // Fallback for older browsers
-        const textArea = document.createElement('textarea');
-        textArea.value = text;
-        document.body.appendChild(textArea);
-        textArea.select();
-        try {
-            document.execCommand('copy');
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
             showCopyToast();
-        } catch (err) {
-            console.error('Fallback copy failed: ', err);
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+            fallbackCopyTextToClipboard(text);
+        });
+    } else {
+        fallbackCopyTextToClipboard(text);
+    }
+}
+
+function fallbackCopyTextToClipboard(text) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.top = '0';
+    textArea.style.left = '0';
+    textArea.style.position = 'fixed';
+    
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    
+    try {
+        const successful = document.execCommand('copy');
+        if (successful) {
+            showCopyToast();
         }
-        document.body.removeChild(textArea);
-    });
+    } catch (err) {
+        console.error('Fallback copy failed: ', err);
+    }
+    
+    document.body.removeChild(textArea);
 }
 
 function showCopyToast() {
@@ -246,7 +270,7 @@ document.querySelectorAll('.skill-item').forEach(item => {
     item.addEventListener('mouseenter', () => {
         const icon = item.querySelector('.skill-icon');
         if (icon) {
-            icon.style.transform = 'scale(1.1) rotate(-5deg)';
+            icon.style.transform = 'scale(1.1) rotate(3deg)';
         }
     });
     
@@ -258,67 +282,64 @@ document.querySelectorAll('.skill-item').forEach(item => {
     });
 });
 
-// ===== FRAMEWORK SHOWCASE ANIMATIONS =====
-document.querySelectorAll('.framework-item').forEach(item => {
-    item.addEventListener('mouseenter', () => {
-        const logo = item.querySelector('.framework-logo');
-        if (logo) {
-            logo.style.transform = 'scale(1.05) translateY(-2px)';
-        }
-    });
-    
-    item.addEventListener('mouseleave', () => {
-        const logo = item.querySelector('.framework-logo');
-        if (logo) {
-            logo.style.transform = 'scale(1) translateY(0)';
-        }
-    });
-});
-
-// ===== TOOL TAG ANIMATIONS =====
-document.querySelectorAll('.tool-tag').forEach(tag => {
-    tag.addEventListener('mouseenter', () => {
-        tag.style.transform = 'translateY(-3px) scale(1.05)';
-    });
-    
-    tag.addEventListener('mouseleave', () => {
-        tag.style.transform = 'translateY(0) scale(1)';
-    });
-});
-
 // ===== TECH NODE INTERACTIONS =====
 document.querySelectorAll('.tech-node').forEach(node => {
     node.addEventListener('click', () => {
         // Create ripple effect
         const ripple = document.createElement('div');
         ripple.style.position = 'absolute';
-        ripple.style.width = '80px';
-        ripple.style.height = '80px';
-        ripple.style.background = 'rgba(0, 217, 255, 0.3)';
+        ripple.style.width = '60px';
+        ripple.style.height = '60px';
+        ripple.style.background = 'rgba(0, 217, 255, 0.5)';
         ripple.style.borderRadius = '50%';
         ripple.style.transform = 'scale(0)';
-        ripple.style.animation = 'ripple 0.6s linear';
+        ripple.style.animation = 'rippleEffect 0.8s linear';
         ripple.style.pointerEvents = 'none';
         ripple.style.top = '50%';
         ripple.style.left = '50%';
-        ripple.style.marginTop = '-40px';
-        ripple.style.marginLeft = '-40px';
+        ripple.style.marginTop = '-30px';
+        ripple.style.marginLeft = '-30px';
         
         node.style.position = 'relative';
         node.appendChild(ripple);
         
         setTimeout(() => {
-            ripple.remove();
-        }, 600);
+            if (ripple.parentNode) {
+                ripple.remove();
+            }
+        }, 800);
     });
 });
 
-// ===== BACK TO TOP FUNCTIONALITY =====
-document.querySelector('.back-to-top').addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+// Add ripple animation
+if (!document.getElementById('ripple-styles')) {
+    const style = document.createElement('style');
+    style.id = 'ripple-styles';
+    style.textContent = `
+        @keyframes rippleEffect {
+            to {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// ===== INTERSECTION OBSERVER FOR SCROLL ANIMATIONS =====
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize typing effect
+    initializeTyping();
+    
+    const elementsToObserve = document.querySelectorAll(
+        '.skill-cluster, .project-card, .education-card, .framework-item, .exp-item'
+    );
+    
+    elementsToObserve.forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(30px)';
+        element.style.transition = 'all 0.6s ease';
+        observer.observe(element);
     });
 });
 
@@ -335,58 +356,88 @@ window.addEventListener('resize', () => {
     }
 });
 
-// ===== INITIALIZE =====
-document.addEventListener('DOMContentLoaded', () => {
-    // Start typing effect
-    setTimeout(typeEffect, 1000);
+// ===== SMOOTH PAGE LOAD ANIMATION =====
+window.addEventListener('load', () => {
+    document.body.style.opacity = '1';
     
-    // Observe elements for animations
-    const elementsToObserve = document.querySelectorAll('.skill-cluster, .project-card, .education-card');
+    // Start typing effect if not already started
+    if (!typingElement) {
+        initializeTyping();
+    }
     
-    elementsToObserve.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
-        element.style.transition = 'all 0.6s ease';
-        observer.observe(element);
-    });
-    
-    // Initialize scroll animations
-    updateActiveNav();
+    // Animate skill icons on load
+    setTimeout(() => {
+        document.querySelectorAll('.skill-icon').forEach((icon, index) => {
+            setTimeout(() => {
+                icon.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    icon.style.transform = 'scale(1)';
+                }, 200);
+            }, index * 100);
+        });
+    }, 1000);
 });
 
+// ===== BACK TO TOP FUNCTIONALITY =====
+const backToTopBtn = document.querySelector('.back-to-top');
+if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
 // ===== PERFORMANCE OPTIMIZATIONS =====
-// Throttle scroll events
-let scrollTimeout;
+let ticking = false;
+
+function updateOnScroll() {
+    updateActiveNav();
+    ticking = false;
+}
+
 window.addEventListener('scroll', () => {
-    if (scrollTimeout) {
-        clearTimeout(scrollTimeout);
+    if (!ticking) {
+        requestAnimationFrame(updateOnScroll);
+        ticking = true;
     }
-    scrollTimeout = setTimeout(() => {
-        updateActiveNav();
-    }, 10);
 });
 
 // ===== EASTER EGG =====
-let clickCount = 0;
-document.querySelector('.logo-text').addEventListener('click', () => {
-    clickCount++;
-    if (clickCount === 5) {
-        document.body.style.filter = 'hue-rotate(180deg)';
-        setTimeout(() => {
-            document.body.style.filter = 'none';
-            clickCount = 0;
-        }, 2000);
-    }
-});
-
-// ===== SOCIAL LINK TRACKING =====
-document.querySelectorAll('.social-link, .method-content a').forEach(link => {
-    link.addEventListener('click', (e) => {
-        const href = link.getAttribute('href');
-        console.log(`User clicked: ${href}`);
-        // You can add analytics tracking here
+let logoClickCount = 0;
+const logoText = document.querySelector('.logo-text');
+if (logoText) {
+    logoText.addEventListener('click', () => {
+        logoClickCount++;
+        if (logoClickCount === 7) {
+            // Secret color theme
+            document.documentElement.style.setProperty('--cyan', '#ff6b6b');
+            document.documentElement.style.setProperty('--purple', '#4ecdc4');
+            setTimeout(() => {
+                document.documentElement.style.setProperty('--cyan', '#00D9FF');
+                document.documentElement.style.setProperty('--purple', '#8B5CF6');
+                logoClickCount = 0;
+            }, 3000);
+        }
     });
-});
+}
 
-// Add ripple animation keyframes
-const style
+// ===== LAZY LOADING FOR PERFORMANCE =====
+if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+
+    document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
+    });
+}
