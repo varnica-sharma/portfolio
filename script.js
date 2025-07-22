@@ -55,7 +55,7 @@ particlesJS('particles-js', {
 
 // ===== FIXED TYPING EFFECT (WORKING PERFECTLY) =====
 const typingTexts = [
-    "M.Sc. Data Science Student",
+    "Data Science Student",
     "Healthcare AI Researcher", 
     "Machine Learning Engineer",
     "Graph Neural Network Specialist",
