@@ -1,181 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Varnica Sharma · Data Science Portfolio</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Varnica Sharma • Data Science Portfolio</title>
 
-  <!-- Styles & Icons -->
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- FONTS & ICONS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- STYLES -->
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <!-- Particle canvas -->
-  <div id="particles-js"></div>
+  <!--  🎆  particles background  -->
+  <canvas id="particles"></canvas>
 
-  <!-- Dark / Light toggle -->
-  <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+  <!--  🌗  theme toggle  -->
+  <button id="theme-toggle" class="glass"><i class="fas fa-moon"></i></button>
 
-  <!-- ─────────── HEADER ─────────── -->
-  <header id="page-header" class="glass">
-    <div class="logo">Varnica</div>
+  <!--  📍 header  -->
+  <header class="glass" id="navbar">
+    <span class="logo-gradient">Varnica</span>
     <ul class="navlist">
-      <li><a class="nav-link active" href="#home">Home</a></li>
-      <li><a class="nav-link" href="#about">About</a></li>
-      <li><a class="nav-link" href="#projects">Projects</a></li>
-      <li><a class="nav-link" href="#contact">Contact</a></li>
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
     <i id="menu-icon" class="bx bx-menu"></i>
   </header>
 
-  <!-- ─────────── HERO ─────────── -->
-  <section id="home" class="section hero">
-    <div class="hero-inner">
-      <span class="badge glass"><i class="fas fa-circle"></i>Available for Opportunities</span>
-
-      <h1>Hi, I’m <span class="gradient">Varnica Sharma</span></h1>
-
-      <h2 id="typing" class="typing"></h2>
-
-      <p class="subtitle">
-        M.Sc. Data Science student obsessed with turning messy healthcare data into intelligent, life-changing solutions.
+  <!--  🏠 hero  -->
+  <section id="home" class="home">
+    <div class="home-inner">
+      <h1>Hi, I’m <span class="text-gradient">Varnica&nbsp;Sharma</span></h1>
+      <h2><span id="typed"></span><span class="cursor">|</span></h2>
+      <p class="lead">
+        M.Sc. Data Science student turning healthcare data into actionable insights
+        with machine-learning &amp; graph-based AI.
       </p>
 
       <div class="stats glass">
-        <div><span data-count="2" class="count">0</span><small>Years Exp.</small></div>
-        <div><span data-count="10" class="count">0</span><small>Projects</small></div>
-        <div><span data-count="87" class="count">0</span><small>Success %</small></div>
+        <div><span class="counter" data-target="2"></span><sup>+</sup><br>Years Exp</div>
+        <div><span class="counter" data-target="10"></span><sup>+</sup><br>Projects</div>
+        <div><span class="counter" data-target="87"></span><sup>%</sup><br>Success Rate</div>
       </div>
 
       <div class="cta">
         <a class="btn primary" href="images/Varnica_Resume.pdf" download><i class="fas fa-download"></i> Resume</a>
-        <a class="btn outline" href="#projects"><i class="fas fa-rocket"></i> Projects</a>
+        <a class="btn outline" href="#projects"><i class="fas fa-rocket"></i> My Work</a>
       </div>
 
       <div class="social">
-        <a href="https://github.com/varnica-sharma" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/varnica-sharma/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:varnicasharma1515@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/varnica-sharma" class="glass" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/varnica-sharma/" class="glass" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:varnicasharma1515@gmail.com" class="glass"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
-    <div class="scroll"><i class="fas fa-chevron-down"></i></div>
   </section>
 
-  <!-- ─────────── ABOUT ─────────── -->
-  <section id="about" class="section about">
+  <!--  👩‍💻 about  -->
+  <section id="about" class="about glass">
     <h2 class="section-title">About Me</h2>
+    <p>
+      Python, PyTorch & R practitioner with a Computer-Science/Statistics background.
+      Comfortable moving from raw data to production dashboards or Streamlit apps.
+    </p>
 
-    <div class="about-grid">
-      <!-- text card -->
-      <div class="glass about-text">
-        <p>
-          I blend <b>Python</b>, <b>PyTorch</b>, and statistical magic to craft predictive pipelines. Currently
-          researching graph neural networks for early Alzheimer’s diagnosis and personalised chemo-therapy response.
-        </p>
-
-        <h3>Education</h3>
-        <ul>
-          <li><b>M.Sc. Data Science</b> · Manipal Academy (2024-26)</li>
-          <li><b>B.Sc. CS + Stats + Maths</b> · Chandigarh University (2021-24)</li>
-        </ul>
-
-        <h3>Experience</h3>
-        <ul>
-          <li>Data Science Intern · Code Clause (Oct-Nov 2023)</li>
-          <li>Data Science Intern · Bharat Intern (Sep-Oct 2023)</li>
-        </ul>
-      </div>
-
-      <!-- skills card -->
-      <div class="glass skills">
-        <h3>Core Skills</h3>
-        <div class="skill"><span>Python</span><div class="bar"><div style="--w:95%"></div></div></div>
-        <div class="skill"><span>Machine Learning</span><div class="bar"><div style="--w:90%"></div></div></div>
-        <div class="skill"><span>Deep Learning</span><div class="bar"><div style="--w:85%"></div></div></div>
-        <div class="skill"><span>PyTorch / GNN</span><div class="bar"><div style="--w:88%"></div></div></div>
-
-        <h3>Tools</h3>
-        <p class="tags">
-          Streamlit · Jupyter · SHAP · Power BI · Git · VS Code
-        </p>
-      </div>
+    <div class="skills">
+      <div><span>Python</span><div class="bar" data-width="95"></div></div>
+      <div><span>Machine Learning</span><div class="bar" data-width="90"></div></div>
+      <div><span>Deep Learning</span><div class="bar" data-width="85"></div></div>
+      <div><span>SQL</span><div class="bar" data-width="80"></div></div>
     </div>
   </section>
 
-  <!-- ─────────── PROJECTS ─────────── -->
-  <section id="projects" class="section projects">
+  <!--  🛠 projects  -->
+  <section id="projects" class="projects">
     <h2 class="section-title">Featured Projects</h2>
 
-    <div class="project-grid">
-      <!-- project 1 -->
-      <article class="project glass">
-        <header><i class="fas fa-brain"></i><span class="star"><i class="fas fa-star"></i></span></header>
-        <h3>Multi-Omics Graph Fusion – Alzheimer’s Diagnosis</h3>
-        <p>GCN model classifying disease stage on 19k ADNI patients (87% accuracy).</p>
-        <div class="tags">Python · PyTorch Geometric · Streamlit</div>
+    <div class="grid">
+      <!-- Alzheimer -->
+      <article class="card glass">
+        <header><i class="fas fa-brain"></i> Graph Fusion Alzheimer Dx</header>
+        <p>
+          GCN model classifying Alzheimer’s stage from multi-omics ADNI data (19k patients) – 87% accuracy.
+        </p>
+        <div class="tags"><span>Python</span><span>GNN</span><span>Streamlit</span></div>
         <div class="actions">
-          <a href="https://multi-omics-alzheimer-diagnosis.streamlit.app" target="_blank" class="btn mini primary">Live</a>
-          <a href="https://github.com/varnica-sharma" target="_blank" class="btn mini outline">Code</a>
+          <a href="https://multi-omics-alzheimer-diagnosis.streamlit.app" target="_blank">Live</a>
+          <a href="https://github.com/varnica-sharma" target="_blank">Code</a>
         </div>
       </article>
 
-      <!-- project 2 -->
-      <article class="project glass">
-        <header><i class="fas fa-pills"></i><span class="star"><i class="fas fa-star"></i></span></header>
-        <h3>Personalised Chemotherapy Response Prediction</h3>
-        <p>Deep-learning predictor with SHAP explanations using GDSC genomics.</p>
-        <div class="tags">Python · PyTorch · SHAP · Streamlit</div>
+      <!-- Chemo -->
+      <article class="card glass">
+        <header><i class="fas fa-pills"></i> Chemo Response Predictor</header>
+        <p>
+          Deep-learning IC50 predictor with SHAP explanations for personalised chemotherapy selection.
+        </p>
+        <div class="tags"><span>PyTorch</span><span>SHAP</span><span>Genomics</span></div>
         <div class="actions">
-          <a href="https://chemo-response-predictor.streamlit.app" target="_blank" class="btn mini primary">Live</a>
-          <a href="https://github.com/varnica-sharma" target="_blank" class="btn mini outline">Code</a>
+          <a href="https://chemo-response-predictor.streamlit.app" target="_blank">Live</a>
+          <a href="https://github.com/varnica-sharma" target="_blank">Code</a>
         </div>
       </article>
 
-      <!-- project 3 -->
-      <article class="project glass">
-        <header><i class="fas fa-utensils"></i></header>
-        <h3>Restaurant Recommender System</h3>
-        <p>Suggests eateries with similar cuisines using collaborative filtering.</p>
-        <div class="tags">Python · Pandas · Scikit-learn</div>
+      <!-- Recommender -->
+      <article class="card glass">
+        <header><i class="fas fa-utensils"></i> Restaurant Recommender</header>
+        <p>Collaborative-filtering engine suggesting restaurants by cuisine &amp; taste similarity.</p>
+        <div class="tags"><span>Pandas</span><span>Scikit-learn</span></div>
         <div class="actions">
-          <a href="https://github.com/varnica-sharma/Restaurant-Recommender-System" target="_blank" class="btn mini outline">Code</a>
+          <a href="https://github.com/varnica-sharma/Restaurant-Recommender-System" target="_blank">Code</a>
         </div>
       </article>
 
-      <!-- coming soon -->
-      <article class="project glass coming">
-        <h3>More projects coming soon…</h3>
+      <!-- Placeholder -->
+      <article class="card dashed">
+        <header><i class="fas fa-plus"></i></header>
+        <p>More exciting CV & NLP work coming soon…</p>
       </article>
     </div>
   </section>
 
-  <!-- ─────────── CONTACT ─────────── -->
-  <section id="contact" class="section contact">
-    <h2 class="section-title">Let’s Connect</h2>
-
-    <form name="submit-to-google-sheet" class="contact-form glass">
-      <div class="two-col">
-        <input type="text" name="Name" placeholder="Full Name" required />
-        <input type="email" name="Email" placeholder="Email" required />
-      </div>
-      <input type="text" name="Subject" placeholder="Subject" />
-      <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn primary"><i class="fas fa-paper-plane"></i> Send</button>
+  <!--  ✉️ contact  -->
+  <section id="contact" class="contact glass">
+    <h2 class="section-title">Contact Me</h2>
+    <form name="submit-to-google-sheet">
+      <input type="text"  name="Name"    placeholder="Your name"  required>
+      <input type="email" name="Email"   placeholder="Your email" required>
+      <textarea name="Message" rows="6"  placeholder="Your message" required></textarea>
+      <button class="btn primary" type="submit"><i class="fas fa-paper-plane"></i> Send</button>
       <span id="msg"></span>
     </form>
   </section>
 
-  <!-- ─────────── FOOTER ─────────── -->
+  <!--  🔝 footer  -->
   <footer>
-    <p>© 2025 Varnica Sharma · Built with passion.</p>
+    <p>&copy; 2025 Varnica Sharma • Built with ❤️ and lots of coffee.</p>
     <a href="#home"><i class="fas fa-chevron-up"></i></a>
   </footer>
 
-  <!-- Scripts -->
+  <!-- SCRIPTS -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script src="script.js"></script>
 </body>
