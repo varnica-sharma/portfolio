@@ -44,7 +44,7 @@ document.querySelectorAll('.counter').forEach(counter => {
 });
 
 /* -------- typing effect -------- */
-const words = ['Data-Science Enthusiast', 'ML Researcher', 'Healthcare AI Nerd'];
+const words = ['Data-Science Enthusiast', 'ML Researcher', 'Healthcare AI Researcher'];
 let i = 0, j = 0, current = '', isDeleting = false;
 const typedEl = document.getElementById('typed');
 function type() {
