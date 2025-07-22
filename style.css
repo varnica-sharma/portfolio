@@ -72,19 +72,6 @@
     --z-tooltip: 1070;
 }
 
-/* Light Theme Variables */
-[data-theme="light"] {
-    --bg-primary: #FFFFFF;
-    --bg-secondary: #F8FAFC;
-    --bg-accent: #E2E8F0;
-    --text-primary: #1F2937;
-    --text-secondary: #4B5563;
-    --text-muted: #9CA3AF;
-    --glass-bg: rgba(255, 255, 255, 0.8);
-    --glass-border: rgba(0, 0, 0, 0.1);
-    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
-
 /* ===== RESET & BASE ===== */
 * {
     margin: 0;
@@ -115,37 +102,6 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-}
-
-/* ===== THEME TOGGLE ===== */
-.theme-toggle {
-    position: fixed;
-    top: 2rem;
-    right: 2rem;
-    width: 50px;
-    height: 50px;
-    background: var(--glass-bg);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: var(--z-fixed);
-    transition: all var(--transition-normal);
-    box-shadow: var(--glass-shadow);
-}
-
-.theme-toggle:hover {
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: var(--glass-shadow), var(--neon-glow);
-}
-
-#theme-icon {
-    font-size: 1.2rem;
-    color: var(--cyan);
-    transition: all var(--transition-normal);
 }
 
 /* ===== GLASS MORPHISM UTILITIES ===== */
@@ -363,37 +319,85 @@ body {
     max-width: 600px;
 }
 
-.stats-container {
-    display: flex;
-    gap: var(--space-xl);
-    padding: var(--space-lg);
-    border-radius: var(--radius-lg);
+/* ===== ACHIEVEMENT CARDS (REPLACING STATS) ===== */
+.achievement-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
     margin-bottom: var(--space-xl);
 }
 
-.stat-item {
-    text-align: center;
+.achievement-card {
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-normal);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.achievement-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--glass-shadow), var(--neon-glow);
+}
+
+.achievement-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-lg);
+    color: white;
+    flex-shrink: 0;
+}
+
+.achievement-content {
     flex: 1;
 }
 
-.stat-number {
-    font-size: var(--font-size-3xl);
-    font-weight: 800;
-    color: var(--cyan);
-    display: block;
+.achievement-content h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-xs);
 }
 
-.stat-symbol {
-    font-size: var(--font-size-2xl);
-    color: var(--cyan);
-    font-weight: 700;
-}
-
-.stat-label {
+.achievement-content p {
     font-size: var(--font-size-sm);
     color: var(--text-secondary);
+    margin-bottom: var(--space-xs);
+}
+
+.achievement-year {
+    font-size: var(--font-size-sm);
+    color: var(--cyan);
     font-weight: 500;
-    margin-top: var(--space-xs);
+}
+
+.achievement-highlight {
+    font-size: var(--font-size-sm);
+    color: var(--green);
+    font-weight: 600;
+    background: rgba(16, 185, 129, 0.1);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    display: inline-block;
 }
 
 .cta-buttons {
@@ -465,7 +469,7 @@ body {
     box-shadow: var(--neon-glow);
 }
 
-/* ===== HERO VISUAL ===== */
+/* ===== HERO VISUAL (ENHANCED WITH MORE FLOATING ELEMENTS) ===== */
 .hero-visual {
     position: relative;
     display: flex;
@@ -475,8 +479,8 @@ body {
 
 .floating-elements {
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
 }
 
 .float-item {
@@ -492,51 +496,75 @@ body {
     justify-content: center;
     font-size: var(--font-size-xl);
     color: var(--cyan);
-    animation: orbit 20s linear infinite;
+    animation: orbit 25s linear infinite;
     box-shadow: var(--glass-shadow);
+    transition: all var(--transition-normal);
+}
+
+.float-item:hover {
+    transform: scale(1.2);
+    box-shadow: var(--glass-shadow), var(--neon-glow);
 }
 
 .float-item:nth-child(1) {
-    top: 10%;
-    left: 10%;
-    animation-delay: -5s;
+    top: 5%;
+    left: 15%;
+    animation-delay: 0s;
+    color: #ffcc02;
 }
 
 .float-item:nth-child(2) {
-    top: 10%;
-    right: 10%;
-    animation-delay: -10s;
+    top: 15%;
+    right: 5%;
+    animation-delay: -5s;
+    color: #ff6b6b;
 }
 
 .float-item:nth-child(3) {
-    bottom: 10%;
-    left: 10%;
-    animation-delay: -15s;
+    bottom: 20%;
+    left: 5%;
+    animation-delay: -10s;
+    color: #4ecdc4;
 }
 
 .float-item:nth-child(4) {
-    bottom: 10%;
-    right: 10%;
-    animation-delay: 0s;
+    bottom: 5%;
+    right: 15%;
+    animation-delay: -15s;
+    color: #a8e6cf;
+}
+
+.float-item:nth-child(5) {
+    top: 50%;
+    left: 5%;
+    animation-delay: -20s;
+    color: #ff8a80;
+}
+
+.float-item:nth-child(6) {
+    top: 50%;
+    right: 5%;
+    animation-delay: -3s;
+    color: #ff4081;
 }
 
 .hologram-effect {
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
     border: 2px solid var(--cyan);
     border-radius: 50%;
     background: radial-gradient(circle, rgba(0, 217, 255, 0.1) 0%, transparent 70%);
-    animation: rotate 10s linear infinite;
+    animation: rotate 15s linear infinite;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hologram-effect::before,
 .hologram-effect::after {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     border: 1px solid var(--cyan);
     border-radius: 50%;
     opacity: 0.3;
@@ -545,47 +573,13 @@ body {
 .hologram-effect::before {
     width: 80%;
     height: 80%;
-    animation: rotate 15s linear infinite reverse;
+    animation: rotate 20s linear infinite reverse;
 }
 
 .hologram-effect::after {
     width: 60%;
     height: 60%;
-    animation: rotate 25s linear infinite;
-}
-
-.scroll-indicator {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-sm);
-    color: var(--text-secondary);
-    font-size: var(--font-size-sm);
-    animation: float 3s ease-in-out infinite;
-}
-
-.mouse {
-    width: 24px;
-    height: 40px;
-    border: 2px solid var(--cyan);
-    border-radius: 15px;
-    position: relative;
-}
-
-.wheel {
-    width: 4px;
-    height: 8px;
-    background: var(--cyan);
-    border-radius: 2px;
-    position: absolute;
-    top: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: mouseWheel 2s infinite;
+    animation: rotate 10s linear infinite;
 }
 
 /* ===== ABOUT SECTION ===== */
@@ -1262,19 +1256,13 @@ body {
 }
 
 @keyframes orbit {
-    0% { transform: rotate(0deg) translateX(200px) rotate(0deg); }
-    100% { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+    0% { transform: rotate(0deg) translateX(250px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(250px) rotate(-360deg); }
 }
 
 @keyframes rotate {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-}
-
-@keyframes mouseWheel {
-    0% { transform: translateX(-50%) translateY(0); opacity: 0; }
-    10%, 90% { opacity: 1; }
-    100% { transform: translateX(-50%) translateY(16px); opacity: 0; }
 }
 
 @keyframes shimmer {
@@ -1308,13 +1296,18 @@ body {
     }
     
     .floating-elements {
-        width: 300px;
-        height: 300px;
+        width: 400px;
+        height: 400px;
     }
     
     .hologram-effect {
-        width: 200px;
-        height: 200px;
+        width: 250px;
+        height: 250px;
+    }
+    
+    .achievement-cards {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--space-md);
     }
 }
 
@@ -1358,8 +1351,8 @@ body {
         padding: 8rem 5% 2rem;
     }
     
-    .stats-container {
-        flex-direction: column;
+    .achievement-cards {
+        grid-template-columns: 1fr;
         gap: var(--space-md);
     }
     
@@ -1381,13 +1374,6 @@ body {
         gap: var(--space-md);
         text-align: center;
     }
-    
-    .theme-toggle {
-        top: 1rem;
-        right: 1rem;
-        width: 45px;
-        height: 45px;
-    }
 }
 
 @media (max-width: 480px) {
@@ -1403,7 +1389,7 @@ body {
         font-size: 2rem;
     }
     
-    .stats-container {
+    .achievement-cards {
         padding: var(--space-md);
     }
     
@@ -1415,14 +1401,19 @@ body {
     }
     
     .floating-elements {
-        width: 250px;
-        height: 250px;
+        width: 300px;
+        height: 300px;
     }
     
     .float-item {
         width: 50px;
         height: 50px;
         font-size: var(--font-size-lg);
+    }
+    
+    .hologram-effect {
+        width: 200px;
+        height: 200px;
     }
 }
 
