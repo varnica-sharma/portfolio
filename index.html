@@ -33,19 +33,25 @@
     <section id="home" class="home">
         <div class="hero-container">
             <div class="home-content">
-                <div class="availability-badge glass">
-                    <i class="fas fa-circle pulse"></i>
-                    <span>Available for Opportunities</span>
+                <div class="status-bar glass">
+                    <div class="status-indicator">
+                        <span class="status-dot pulse"></span>
+                        <span class="status-text">Currently Available</span>
+                    </div>
+                    <div class="location-badge">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>India</span>
+                    </div>
                 </div>
                 
                 <h1 class="hero-title">
                     Hi, I'm <span class="name-gradient">Varnica Sharma</span>
                 </h1>
                 
-                <div class="typing-container">
+                <div class="role-display">
                     <h2 class="hero-subtitle">
                         <span class="typing-text"></span>
-                        <span class="cursor">|</span>
+                        <span class="typing-cursor"></span>
                     </h2>
                 </div>
 
@@ -53,93 +59,154 @@
                     M.Sc. Data Science student passionate about transforming healthcare through intelligent data solutions and cutting-edge machine learning research.
                 </p>
 
-                <div class="achievement-cards">
-                    <div class="achievement-card glass">
+                <div class="achievement-showcase">
+                    <div class="achievement-item glass">
                         <div class="achievement-icon">
                             <i class="fas fa-graduation-cap"></i>
                         </div>
-                        <div class="achievement-content">
+                        <div class="achievement-details">
                             <h3>M.Sc. Data Science</h3>
                             <p>Currently Pursuing</p>
-                            <span class="achievement-year">2024-2026</span>
+                            <span class="timeline">2024-2026</span>
+                        </div>
+                        <div class="achievement-progress">
+                            <div class="progress-ring">
+                                <svg width="60" height="60">
+                                    <circle cx="30" cy="30" r="25" stroke="rgba(0,217,255,0.2)" stroke-width="3" fill="none" />
+                                    <circle cx="30" cy="30" r="25" stroke="#00D9FF" stroke-width="3" fill="none" 
+                                            stroke-dasharray="157" stroke-dashoffset="78.5" class="progress-circle" />
+                                </svg>
+                                <span class="progress-text">50%</span>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="achievement-card glass">
+                    <div class="achievement-item glass">
                         <div class="achievement-icon">
-                            <i class="fas fa-project-diagram"></i>
+                            <i class="fas fa-brain"></i>
                         </div>
-                        <div class="achievement-content">
-                            <h3>Healthcare AI Projects</h3>
-                            <p>Specialized Focus</p>
-                            <span class="achievement-highlight">87% Accuracy</span>
+                        <div class="achievement-details">
+                            <h3>AI Research Projects</h3>
+                            <p>Healthcare Focus</p>
+                            <span class="highlight">87% Accuracy</span>
+                        </div>
+                        <div class="achievement-stats">
+                            <div class="stat-mini">
+                                <span class="stat-value">19K+</span>
+                                <span class="stat-label">Patients</span>
+                            </div>
+                            <div class="stat-mini">
+                                <span class="stat-value">2+</span>
+                                <span class="stat-label">Papers</span>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="achievement-card glass">
+                    <div class="achievement-item glass">
                         <div class="achievement-icon">
-                            <i class="fas fa-award"></i>
+                            <i class="fas fa-code"></i>
                         </div>
-                        <div class="achievement-content">
-                            <h3>Research Publications</h3>
-                            <p>Academic Contributions</p>
-                            <span class="achievement-highlight">In Progress</span>
+                        <div class="achievement-details">
+                            <h3>Technical Expertise</h3>
+                            <p>Full Stack ML</p>
+                            <span class="tech-count">15+ Technologies</span>
+                        </div>
+                        <div class="tech-preview">
+                            <span class="tech-mini">Python</span>
+                            <span class="tech-mini">PyTorch</span>
+                            <span class="tech-mini">React</span>
+                            <span class="tech-mini">+12</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="cta-buttons">
-                    <a href="images/Varnica_Resume.pdf" download class="btn btn-primary glass-btn">
-                        <i class="fas fa-download"></i>
-                        <span>Download Resume</span>
-                    </a>
-                    <a href="#projects" class="btn btn-secondary glass-btn">
-                        <i class="fas fa-rocket"></i>
-                        <span>View Projects</span>
-                    </a>
-                </div>
-
-                <div class="social-links">
-                    <a href="https://github.com/varnica-sharma" target="_blank" class="social-icon glass">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/varnica-sharma/" target="_blank" class="social-icon glass">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="mailto:varnicasharma1515@gmail.com" class="social-icon glass">
-                        <i class="fas fa-envelope"></i>
-                    </a>
+                <div class="cta-section">
+                    <div class="primary-actions">
+                        <a href="images/Varnica_Resume.pdf" download class="btn btn-primary glass-btn">
+                            <i class="fas fa-download"></i>
+                            <span>Get Resume</span>
+                            <div class="btn-glow"></div>
+                        </a>
+                        <a href="#projects" class="btn btn-secondary glass-btn">
+                            <i class="fas fa-rocket"></i>
+                            <span>View Projects</span>
+                        </a>
+                    </div>
+                    
+                    <div class="quick-connect">
+                        <span class="connect-label">Quick Connect:</span>
+                        <div class="social-cluster">
+                            <a href="https://github.com/varnica-sharma" target="_blank" class="social-link glass" data-tooltip="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/varnica-sharma/" target="_blank" class="social-link glass" data-tooltip="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:varnicasharma1515@gmail.com" class="social-link glass" data-tooltip="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Interactive 3D Visual Element -->
+            <!-- Enhanced Visual Elements -->
             <div class="hero-visual">
-                <div class="floating-elements">
-                    <div class="float-item" data-speed="2">
-                        <i class="fab fa-python"></i>
-                    </div>
-                    <div class="float-item" data-speed="3">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <div class="float-item" data-speed="1.5">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="float-item" data-speed="2.5">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <div class="float-item" data-speed="1.8">
-                        <i class="fas fa-microscope"></i>
-                    </div>
-                    <div class="float-item" data-speed="2.3">
-                        <i class="fas fa-heartbeat"></i>
+                <div class="data-visualization">
+                    <div class="neural-network">
+                        <div class="layer input-layer">
+                            <div class="node" data-delay="0"></div>
+                            <div class="node" data-delay="0.2"></div>
+                            <div class="node" data-delay="0.4"></div>
+                            <div class="node" data-delay="0.6"></div>
+                        </div>
+                        <div class="layer hidden-layer">
+                            <div class="node" data-delay="0.8"></div>
+                            <div class="node" data-delay="1.0"></div>
+                            <div class="node" data-delay="1.2"></div>
+                            <div class="node" data-delay="1.4"></div>
+                            <div class="node" data-delay="1.6"></div>
+                        </div>
+                        <div class="layer output-layer">
+                            <div class="node" data-delay="1.8"></div>
+                            <div class="node" data-delay="2.0"></div>
+                            <div class="node" data-delay="2.2"></div>
+                        </div>
+                        <div class="connections"></div>
                     </div>
                 </div>
-                <div class="hologram-effect"></div>
+                
+                <div class="tech-orbits">
+                    <div class="orbit-ring ring-1">
+                        <div class="tech-node" data-tech="Python">
+                            <i class="fab fa-python"></i>
+                        </div>
+                    </div>
+                    <div class="orbit-ring ring-2">
+                        <div class="tech-node" data-tech="AI/ML">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="tech-node" data-tech="Data">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <div class="orbit-ring ring-3">
+                        <div class="tech-node" data-tech="Healthcare">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="tech-node" data-tech="Research">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <div class="tech-node" data-tech="Cloud">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section with Cards -->
+    <!-- Enhanced About Section -->
     <section id="about" class="about-section">
         <div class="container">
             <div class="section-header">
@@ -149,93 +216,228 @@
 
             <div class="about-grid">
                 <div class="about-content">
-                    <div class="about-text glass">
-                        <h3>Data Science Graduate Student</h3>
-                        <p>Currently pursuing M.Sc. in Data Science at Manipal Academy of Higher Education, with a strong foundation in Computer Science, Statistics, and Mathematics from Chandigarh University.</p>
-                        
-                        <p>I specialize in building intelligent healthcare AI solutions, with hands-on experience in deep learning, graph neural networks, and personalized prediction systems.</p>
-                        
-                        <div class="education-timeline">
-                            <div class="timeline-item glass">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <h4>M.Sc. Data Science</h4>
-                                    <span class="timeline-date">2024 - 2026</span>
-                                    <p>Manipal Academy of Higher Education</p>
+                    <div class="profile-card glass">
+                        <div class="profile-header">
+                            <div class="profile-avatar">
+                                <div class="avatar-placeholder">
+                                    <i class="fas fa-user-graduate"></i>
+                                </div>
+                                <div class="status-indicator online"></div>
+                            </div>
+                            <div class="profile-info">
+                                <h3>Varnica Sharma</h3>
+                                <p>Data Science Graduate Student</p>
+                                <div class="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>India</span>
                                 </div>
                             </div>
-                            <div class="timeline-item glass">
+                        </div>
+                        
+                        <div class="profile-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">2+</span>
+                                <span class="stat-label">Years Experience</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">87%</span>
+                                <span class="stat-label">Model Accuracy</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">19K+</span>
+                                <span class="stat-label">Data Points</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bio-text">
+                            <p>Currently pursuing M.Sc. in Data Science at Manipal Academy of Higher Education. Specializing in healthcare AI solutions with expertise in deep learning, graph neural networks, and personalized prediction systems.</p>
+                        </div>
+                        
+                        <div class="education-timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot active"></div>
+                                <div class="timeline-content">
+                                    <h4>M.Sc. Data Science</h4>
+                                    <span class="timeline-institution">Manipal Academy</span>
+                                    <span class="timeline-date">2024 - 2026</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
                                 <div class="timeline-dot"></div>
                                 <div class="timeline-content">
                                     <h4>B.Sc. Computer Science</h4>
+                                    <span class="timeline-institution">Chandigarh University</span>
                                     <span class="timeline-date">2021 - 2024</span>
-                                    <p>Chandigarh University</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="skills-container">
-                    <!-- Technical Skills -->
-                    <div class="skill-category glass">
-                        <h3><i class="fas fa-code"></i> Technical Skills</h3>
-                        <div class="skill-items">
-                            <div class="skill-item">
-                                <span class="skill-name">Python</span>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="95%"></div>
+                <div class="skills-showcase">
+                    <!-- Technical Arsenal -->
+                    <div class="skill-cluster glass">
+                        <div class="cluster-header">
+                            <div class="cluster-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3>Technical Arsenal</h3>
+                        </div>
+                        <div class="skill-matrix">
+                            <div class="skill-category">
+                                <h4>Core Languages</h4>
+                                <div class="skill-items">
+                                    <div class="skill-chip mastery">
+                                        <span class="skill-name">Python</span>
+                                        <div class="skill-level">Expert</div>
+                                    </div>
+                                    <div class="skill-chip advanced">
+                                        <span class="skill-name">SQL</span>
+                                        <div class="skill-level">Advanced</div>
+                                    </div>
+                                    <div class="skill-chip intermediate">
+                                        <span class="skill-name">JavaScript</span>
+                                        <div class="skill-level">Intermediate</div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Machine Learning</span>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="90%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Deep Learning</span>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="85%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">PyTorch</span>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="88%"></div>
+                            
+                            <div class="skill-category">
+                                <h4>ML/AI Frameworks</h4>
+                                <div class="skill-items">
+                                    <div class="skill-chip mastery">
+                                        <span class="skill-name">PyTorch</span>
+                                        <div class="skill-level">Expert</div>
+                                    </div>
+                                    <div class="skill-chip advanced">
+                                        <span class="skill-name">TensorFlow</span>
+                                        <div class="skill-level">Advanced</div>
+                                    </div>
+                                    <div class="skill-chip advanced">
+                                        <span class="skill-name">Scikit-learn</span>
+                                        <div class="skill-level">Advanced</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Tools & Frameworks -->
-                    <div class="skill-category glass">
-                        <h3><i class="fas fa-tools"></i> Tools & Frameworks</h3>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Streamlit</span>
-                            <span class="tech-badge">Jupyter</span>
-                            <span class="tech-badge">PyTorch Geometric</span>
-                            <span class="tech-badge">SHAP</span>
-                            <span class="tech-badge">Power BI</span>
-                            <span class="tech-badge">Google Colab</span>
-                            <span class="tech-badge">VS Code</span>
-                            <span class="tech-badge">Git</span>
+                    <!-- Data Science Toolkit -->
+                    <div class="skill-cluster glass">
+                        <div class="cluster-header">
+                            <div class="cluster-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h3>Data Science Toolkit</h3>
+                        </div>
+                        <div class="toolkit-grid">
+                            <div class="tool-item">
+                                <div class="tool-icon">
+                                    <i class="fas fa-table"></i>
+                                </div>
+                                <span>Pandas</span>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-icon">
+                                    <i class="fas fa-calculator"></i>
+                                </div>
+                                <span>NumPy</span>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-icon">
+                                    <i class="fas fa-chart-pie"></i>
+                                </div>
+                                <span>Matplotlib</span>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-icon">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <span>Seaborn</span>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-icon">
+                                    <i class="fas fa-desktop"></i>
+                                </div>
+                                <span>Streamlit</span>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-icon">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <span>Git</span>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Experience -->
-                    <div class="skill-category glass">
-                        <h3><i class="fas fa-briefcase"></i> Experience</h3>
-                        <div class="experience-list">
+                    <!-- Specializations -->
+                    <div class="skill-cluster glass">
+                        <div class="cluster-header">
+                            <div class="cluster-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3>AI Specializations</h3>
+                        </div>
+                        <div class="specialization-list">
+                            <div class="spec-item">
+                                <div class="spec-icon healthcare">
+                                    <i class="fas fa-heartbeat"></i>
+                                </div>
+                                <div class="spec-content">
+                                    <h4>Healthcare AI</h4>
+                                    <p>Medical diagnosis & treatment prediction</p>
+                                </div>
+                                <div class="spec-badge">Primary</div>
+                            </div>
+                            
+                            <div class="spec-item">
+                                <div class="spec-icon ml">
+                                    <i class="fas fa-network-wired"></i>
+                                </div>
+                                <div class="spec-content">
+                                    <h4>Deep Learning</h4>
+                                    <p>Neural networks & graph analysis</p>
+                                </div>
+                                <div class="spec-badge">Expert</div>
+                            </div>
+                            
+                            <div class="spec-item">
+                                <div class="spec-icon data">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="spec-content">
+                                    <h4>Predictive Analytics</h4>
+                                    <p>Pattern recognition & forecasting</p>
+                                </div>
+                                <div class="spec-badge">Advanced</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience Timeline -->
+                    <div class="skill-cluster glass">
+                        <div class="cluster-header">
+                            <div class="cluster-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h3>Professional Journey</h3>
+                        </div>
+                        <div class="experience-timeline">
                             <div class="exp-item">
-                                <h4>Data Science Intern</h4>
-                                <span class="exp-company">Code Clause</span>
-                                <span class="exp-date">Oct 2023 - Nov 2023</span>
+                                <div class="exp-date">Oct-Nov 2023</div>
+                                <div class="exp-details">
+                                    <h4>Data Science Intern</h4>
+                                    <span class="exp-company">Code Clause</span>
+                                    <p>Developed ML models for data analysis</p>
+                                </div>
                             </div>
                             <div class="exp-item">
-                                <h4>Data Science Intern</h4>
-                                <span class="exp-company">Bharat Intern</span>
-                                <span class="exp-date">Sep 2023 - Oct 2023</span>
+                                <div class="exp-date">Sep-Oct 2023</div>
+                                <div class="exp-details">
+                                    <h4>Data Science Intern</h4>
+                                    <span class="exp-company">Bharat Intern</span>
+                                    <p>Healthcare data analysis projects</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -244,7 +446,7 @@
         </div>
     </section>
 
-    <!-- Projects Section with Advanced Cards -->
+    <!-- Enhanced Projects Section -->
     <section id="projects" class="projects-section">
         <div class="container">
             <div class="section-header">
@@ -252,157 +454,173 @@
                 <p class="section-subtitle">Innovative solutions in healthcare AI and machine learning</p>
             </div>
 
-            <div class="projects-grid">
+            <div class="projects-showcase">
                 <!-- Featured Project 1 -->
-                <div class="project-card featured glass" data-category="healthcare">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <span class="featured-badge">
+                <div class="project-card featured glass">
+                    <div class="project-banner">
+                        <div class="project-type">Healthcare AI</div>
+                        <div class="featured-badge">
                             <i class="fas fa-star"></i>
-                            Featured
-                        </span>
+                            <span>Featured</span>
+                        </div>
                     </div>
                     
                     <div class="project-content">
+                        <div class="project-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        
                         <h3 class="project-title">Multi-Omics Graph Fusion for Alzheimer's Diagnosis</h3>
                         <p class="project-description">
-                            Built an advanced GCN-based predictive model to classify Alzheimer's disease stages using cognitive and demographic features from the ADNI dataset with 19,000+ patient records.
+                            Advanced GCN-based predictive model for Alzheimer's disease stage classification using cognitive and demographic features from ADNI dataset with 19,000+ patient records.
                         </p>
                         
-                        <div class="project-highlights">
-                            <span class="highlight-item">
-                                <i class="fas fa-check-circle"></i>
-                                87% Accuracy
-                            </span>
-                            <span class="highlight-item">
-                                <i class="fas fa-users"></i>
-                                19k+ Patients
-                            </span>
-                            <span class="highlight-item">
-                                <i class="fas fa-eye"></i>
-                                Early Detection
-                            </span>
+                        <div class="project-metrics">
+                            <div class="metric-item">
+                                <div class="metric-icon success">
+                                    <i class="fas fa-bullseye"></i>
+                                </div>
+                                <div class="metric-content">
+                                    <span class="metric-value">87%</span>
+                                    <span class="metric-label">Accuracy</span>
+                                </div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-icon info">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="metric-content">
+                                    <span class="metric-value">19K+</span>
+                                    <span class="metric-label">Patients</span>
+                                </div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-icon warning">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="metric-content">
+                                    <span class="metric-value">Early</span>
+                                    <span class="metric-label">Detection</span>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="tech-stack-project">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">PyTorch Geometric</span>
-                            <span class="tech-tag">GNN</span>
-                            <span class="tech-tag">Streamlit</span>
+                        <div class="tech-stack">
+                            <span class="tech-tag python">Python</span>
+                            <span class="tech-tag pytorch">PyTorch Geometric</span>
+                            <span class="tech-tag ai">GNN</span>
+                            <span class="tech-tag web">Streamlit</span>
                         </div>
                     </div>
 
                     <div class="project-actions">
-                        <a href="https://multi-omics-alzheimer-diagnosis.streamlit.app" target="_blank" class="btn-project btn-live">
+                        <a href="https://multi-omics-alzheimer-diagnosis.streamlit.app" target="_blank" class="action-btn primary">
                             <i class="fas fa-external-link-alt"></i>
-                            Live Demo
+                            <span>Live Demo</span>
                         </a>
-                        <a href="https://github.com/varnica-sharma" target="_blank" class="btn-project btn-code">
+                        <a href="https://github.com/varnica-sharma" target="_blank" class="action-btn secondary">
                             <i class="fab fa-github"></i>
-                            View Code
+                            <span>Source Code</span>
                         </a>
                     </div>
                 </div>
 
                 <!-- Featured Project 2 -->
-                <div class="project-card featured glass" data-category="healthcare">
-                    <div class="project-header">
+                <div class="project-card featured glass">
+                    <div class="project-banner">
+                        <div class="project-type">Precision Medicine</div>
+                        <div class="featured-badge">
+                            <i class="fas fa-star"></i>
+                            <span>Featured</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-content">
                         <div class="project-icon">
                             <i class="fas fa-pills"></i>
                         </div>
-                        <span class="featured-badge">
-                            <i class="fas fa-star"></i>
-                            Featured
-                        </span>
-                    </div>
-                    
-                    <div class="project-content">
+                        
                         <h3 class="project-title">Personalized Chemotherapy Response Prediction</h3>
                         <p class="project-description">
-                            Developed a personalized deep learning model to predict chemotherapy drug response using GDSC genomics and drug metadata with SHAP explainability.
+                            Deep learning model predicting chemotherapy drug response using GDSC genomics and drug metadata with SHAP explainability for clinical decision support.
                         </p>
                         
-                        <div class="project-highlights">
-                            <span class="highlight-item">
-                                <i class="fas fa-user-md"></i>
-                                Personalized
-                            </span>
-                            <span class="highlight-item">
-                                <i class="fas fa-chart-bar"></i>
-                                SHAP Analysis
-                            </span>
-                            <span class="highlight-item">
-                                <i class="fas fa-hospital"></i>
-                                Clinical Grade
-                            </span>
+                        <div class="project-metrics">
+                            <div class="metric-item">
+                                <div class="metric-icon success">
+                                    <i class="fas fa-user-md"></i>
+                                </div>
+                                <div class="metric-content">
+                                    <span class="metric-value">Personal</span>
+                                    <span class="metric-label">Approach</span>
+                                </div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-icon info">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                                <div class="metric-content">
+                                    <span class="metric-value">SHAP</span>
+                                    <span class="metric-label">Explained</span>
+                                </div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-icon warning">
+                                    <i class="fas fa-hospital"></i>
+                                </div>
+                                <div class="metric-content">
+                                    <span class="metric-value">Clinical</span>
+                                    <span class="metric-label">Grade</span>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="tech-stack-project">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">PyTorch</span>
-                            <span class="tech-tag">SHAP</span>
-                            <span class="tech-tag">Streamlit</span>
+                        <div class="tech-stack">
+                            <span class="tech-tag python">Python</span>
+                            <span class="tech-tag pytorch">PyTorch</span>
+                            <span class="tech-tag ai">SHAP</span>
+                            <span class="tech-tag web">Streamlit</span>
                         </div>
                     </div>
 
                     <div class="project-actions">
-                        <a href="https://chemo-response-predictor.streamlit.app" target="_blank" class="btn-project btn-live">
+                        <a href="https://chemo-response-predictor.streamlit.app" target="_blank" class="action-btn primary">
                             <i class="fas fa-external-link-alt"></i>
-                            Live Demo
+                            <span>Live Demo</span>
                         </a>
-                        <a href="https://github.com/varnica-sharma" target="_blank" class="btn-project btn-code">
+                        <a href="https://github.com/varnica-sharma" target="_blank" class="action-btn secondary">
                             <i class="fab fa-github"></i>
-                            View Code
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Additional Project -->
-                <div class="project-card glass" data-category="ml">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-utensils"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="project-content">
-                        <h3 class="project-title">Restaurant Recommender System</h3>
-                        <p class="project-description">
-                            Intelligent recommendation system that suggests restaurants based on cuisine similarity and user preferences using collaborative filtering.
-                        </p>
-                        
-                        <div class="tech-stack-project">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Pandas</span>
-                            <span class="tech-tag">Scikit-learn</span>
-                        </div>
-                    </div>
-
-                    <div class="project-actions">
-                        <a href="https://github.com/varnica-sharma/Restaurant-Recommender-System" target="_blank" class="btn-project btn-code">
-                            <i class="fab fa-github"></i>
-                            View Code
+                            <span>Source Code</span>
                         </a>
                     </div>
                 </div>
 
                 <!-- Coming Soon Card -->
                 <div class="project-card coming-soon glass">
-                    <div class="coming-soon-content">
-                        <div class="coming-soon-icon">
-                            <i class="fas fa-plus"></i>
+                    <div class="coming-soon-visual">
+                        <div class="construction-icon">
+                            <i class="fas fa-flask"></i>
                         </div>
-                        <h3>More Projects Coming Soon</h3>
-                        <p>Currently working on exciting new projects in computer vision and NLP</p>
+                        <div class="progress-rings">
+                            <div class="ring ring-1"></div>
+                            <div class="ring ring-2"></div>
+                            <div class="ring ring-3"></div>
+                        </div>
+                    </div>
+                    <div class="coming-soon-content">
+                        <h3>Next Innovation Loading...</h3>
+                        <p>Computer Vision & NLP projects in development</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <span class="progress-text">65% Complete</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Enhanced Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
             <div class="section-header">
@@ -410,75 +628,68 @@
                 <p class="section-subtitle">Ready to collaborate? Let's build something amazing together!</p>
             </div>
 
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-card glass">
-                        <h3>Get In Touch</h3>
-                        <p>I'm always excited to discuss new opportunities, collaborations, and innovative projects in data science and AI.</p>
+            <div class="contact-hub">
+                <div class="contact-center glass">
+                    <div class="avatar-section">
+                        <div class="contact-avatar">
+                            <div class="avatar-ring">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div class="status-dot online"></div>
+                        </div>
+                        <h3>Varnica Sharma</h3>
+                        <p>Data Science Graduate Student</p>
+                    </div>
 
-                        <div class="contact-methods">
-                            <div class="contact-method">
-                                <div class="method-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div class="method-details">
-                                    <span class="method-label">Email</span>
-                                    <a href="mailto:varnicasharma1515@gmail.com">varnicasharma1515@gmail.com</a>
-                                </div>
+                    <div class="contact-methods">
+                        <div class="method-item email" onclick="copyToClipboard('varnicasharma1515@gmail.com')">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
                             </div>
-                            
-                            <div class="contact-method">
-                                <div class="method-icon">
-                                    <i class="fab fa-linkedin"></i>
-                                </div>
-                                <div class="method-details">
-                                    <span class="method-label">LinkedIn</span>
-                                    <a href="https://www.linkedin.com/in/varnica-sharma/" target="_blank">Connect with me</a>
-                                </div>
+                            <div class="method-content">
+                                <h4>Email</h4>
+                                <p>varnicasharma1515@gmail.com</p>
+                                <span class="method-action">Click to copy</span>
                             </div>
-                            
-                            <div class="contact-method">
-                                <div class="method-icon">
-                                    <i class="fab fa-github"></i>
-                                </div>
-                                <div class="method-details">
-                                    <span class="method-label">GitHub</span>
-                                    <a href="https://github.com/varnica-sharma" target="_blank">View my repositories</a>
-                                </div>
+                        </div>
+
+                        <div class="method-item linkedin">
+                            <div class="method-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div class="method-content">
+                                <h4>LinkedIn</h4>
+                                <p>Professional Network</p>
+                                <a href="https://www.linkedin.com/in/varnica-sharma/" target="_blank" class="method-action">Connect Now</a>
+                            </div>
+                        </div>
+
+                        <div class="method-item github">
+                            <div class="method-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="method-content">
+                                <h4>GitHub</h4>
+                                <p>Code Repository</p>
+                                <a href="https://github.com/varnica-sharma" target="_blank" class="method-action">View Projects</a>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="contact-form-container">
-                    <form name="submit-to-google-sheet" class="contact-form glass">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <input type="text" name="Name" placeholder="Your Name" required>
-                                <label>Full Name</label>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" name="Email" placeholder="Your Email" required>
-                                <label>Email Address</label>
-                            </div>
+                    <div class="quick-stats">
+                        <div class="stat-bubble">
+                            <span class="stat-value">24h</span>
+                            <span class="stat-label">Response Time</span>
                         </div>
-                        
-                        <div class="form-group">
-                            <input type="text" name="Subject" placeholder="Subject">
-                            <label>Subject</label>
+                        <div class="stat-bubble">
+                            <span class="stat-value">100%</span>
+                            <span class="stat-label">Reply Rate</span>
                         </div>
-                        
-                        <div class="form-group">
-                            <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
-                            <label>Message</label>
+                        <div class="stat-bubble">
+                            <span class="stat-value">Open</span>
+                            <span class="stat-label">To Collaborate</span>
                         </div>
-
-                        <button type="submit" class="btn btn-primary glass-btn submit-btn">
-                            <i class="fas fa-paper-plane"></i>
-                            <span>Send Message</span>
-                        </button>
-                    </form>
-                    <div id="msg" class="form-message"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -488,13 +699,22 @@
     <footer class="glass-footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 Varnica Sharma. All rights reserved. Built with passion and creativity.</p>
+                <div class="footer-info">
+                    <p>&copy; 2025 Varnica Sharma. Crafted with precision & creativity.</p>
+                    <span class="footer-tech">Built with React-inspired vanilla JS</span>
+                </div>
                 <a href="#home" class="back-to-top glass">
                     <i class="fas fa-chevron-up"></i>
                 </a>
             </div>
         </div>
     </footer>
+
+    <!-- Copy Toast -->
+    <div id="copy-toast" class="copy-toast">
+        <i class="fas fa-check"></i>
+        <span>Email copied to clipboard!</span>
+    </div>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
