@@ -3,188 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Data Professional Portfolio</title>
+    <title>Varnica Sharma - Data Scientist Portfolio</title>
     <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="bg-animated"></div>
+<div class="floating-tags-container" id="floating-tags"></div>
 
-    <header>
-        <div class="brand">Your Name</div>
-        <nav>
-            <ul id="site-nav">
-                <li><a href="#intro">Intro</a></li>
-                <li><a href="#profile">Profile</a></li>
-                <li><a href="#work">Work</a></li>
-                <li><a href="#contact">Contact</a></li>
+<header>
+    <div class="logo">Varnica Sharma</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <div class="hero-content">
+        <div class="status-badge"><i class='bx bx-check-circle'></i> Available for Work</div>
+        <h1>
+            Data <span class="highlight">Scientist</span>
+        </h1>
+        <div class="typewriter">
+            <span id="typewriter"></span><span class="cursor">|</span>
+        </div>
+        <p class="hero-desc">
+            Transforming data into insight with <span>AI</span>, <span>bioinformatics</span>, <span>and ML-powered analytics</span>.
+        </p>
+        <div class="cta-row">
+            <a href="Varnica_Sharma_Resume.pdf" download class="btn primary"><i class="bx bx-download"></i> Download CV</a>
+        </div>
+        <div class="social-row">
+            <a href="https://www.linkedin.com/feed/" target="_blank" title="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+            <a href="https://github.com/varnica-sharma" target="_blank" title="GitHub"><i class="bx bxl-github"></i></a>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p class="about-bio">
+        Hi, I'm Varnica Sharma—a data scientist specialized in AI, machine learning, and biomedical analytics. 
+        As an M.Sc. Data Science student with hands-on internship experience, I love tackling real-life problems, 
+        especially in healthcare and omics data, and building practical web apps from that insight.
+    </p>
+    <div class="about-cards">
+        <div>
+            <h3>Technical Skills</h3>
+            <ul>
+                <li><strong>Python</strong>, R, SQL, Pandas, NumPy</li>
+                <li>scikit-learn, PyTorch, TensorFlow</li>
+                <li>Streamlit, Tableau, Excel</li>
+                <li>Bioinformatics, Deep Learning, ML</li>
             </ul>
-            <div id="nav-toggle"><i class='bx bx-menu'></i></div>
-        </nav>
-    </header>
+        </div>
+        <div>
+            <h3>Experience</h3>
+            <ul>
+                <li><b>Data Science Intern</b>, Bharat Intern (Sep-Oct 2023)</li>
+                <li><b>Data Science Intern</b>, Code Clause (Oct-Nov 2023)</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Education</h3>
+            <ul>
+                <li><b>M.Sc. Data Science</b>, MAHE (2024-2026)</li>
+                <li><b>B.Sc. Computer Science</b> (2021-2024), focus: Stats & Math</li>
+            </ul>
+        </div>
+    </div>
+</section>
 
-    <section id="intro" class="intro-section">
-        <div class="intro-content">
-            <div class="availability"><i class='bx bx-broadcast'></i> Available for new roles</div>
-            <h1>
-                <span class="job-title">Data <em class="focus-anim">Analyst</em></span>
-            </h1>
-            <div class="typewriter"><span id="typed-txt"></span><span class="cursor">|</span></div>
-            <p class="tagline">
-                Unlocking value from data with <span>clever analysis</span>, <span>AI models</span>, and <span>clear visualizations</span>.
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+        <div class="project-card">
+            <span class="card-badge live">LIVE</span>
+            <h3>Multi-Omics Alzheimer Diagnosis</h3>
+            <p>
+                Predicts Alzheimer's stage from complex omics data with AI. Features: confidence graphs, Streamlit UI.
             </p>
-            <div class="cta-row">
-                <a href="assets/my_cv.pdf" class="btn main-btn" download>
-                    <i class='bx bx-cloud-download'></i> Download CV
-                </a>
-                <a href="mailto:youremail@example.com" class="btn secondary-btn">
-                    <i class='bx bx-envelope'></i> Contact Me
-                </a>
+            <div class="tags">
+                <span>GCN</span>
+                <span>Streamlit</span>
+                <span>Bioinformatics</span>
+                <span>PyTorch</span>
             </div>
-            <div class="socials">
-                <a href="https://linkedin.com/in/YOURPROFILE" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                <a href="https://github.com/YOURUSERNAME" target="_blank"><i class='bx bxl-github'></i></a>
+            <div class="project-links">
+                <a href="https://multi-omics-alzheimer-diagnosis.streamlit.app" target="_blank" class="btn main-btn">Live Demo</a>
+                <a href="https://github.com/varnica-sharma/Multi-Omics-Alzheimer-Diagnosis" target="_blank" class="btn link-btn">GitHub</a>
             </div>
         </div>
-        <aside class="skills-cards">
-            <div class="card-item"><i class='bx bx-cube'></i><span>AI</span></div>
-            <div class="card-item"><i class='bx bx-data'></i><span>Databases</span></div>
-            <div class="card-item"><i class='bx bx-line-chart'></i><span>Analytics</span></div>
-            <div class="card-item"><i class='bx bx-slider'></i><span>Automation</span></div>
-            <div class="card-item"><i class='bx bx-palette'></i><span>Viz Design</span></div>
-        </aside>
-    </section>
+        <div class="project-card">
+            <span class="card-badge live">LIVE</span>
+            <h3>Chemo-Response Predictor</h3>
+            <p>
+                Predicts chemotherapeutic response using genetic and clinical features. Clean deployment, robust ML backend.
+            </p>
+            <div class="tags">
+                <span>ML</span>
+                <span>Python</span>
+                <span>Healthcare</span>
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/varnica-sharma/Chemo-Response-Predictor?tab=readme-ov-file" target="_blank" class="btn main-btn">Demo</a>
+                <a href="https://github.com/varnica-sharma/Chemo-Response-Predictor" target="_blank" class="btn link-btn">GitHub</a>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <section id="profile" class="profile-section">
-        <h2>About Me</h2>
-        <div class="profile-grid">
-            <div class="bio">
-                <p>
-                    I am a data and machine learning enthusiast, passionate about crafting smart solutions to real-world analytics challenges.
-                    Equally comfortable with logic and creativity, I thrive at the intersection of code, numbers, and user impact.
-                </p>
-            </div>
-            <div class="tabs">
-                <div class="tab-bar">
-                    <button class="tab-btn active" data-tab="skills"><i class='bx bx-code-block'></i> Skills</button>
-                    <button class="tab-btn" data-tab="career"><i class='bx bx-timer'></i> Career</button>
-                    <button class="tab-btn" data-tab="edu"><i class='bx bx-book-open'></i> Education</button>
-                </div>
-                <div class="tab-body active" id="skills">
-                    <div class="skills-list">
-                        <div>
-                            <strong>Languages:</strong>
-                            <span>Python</span> <span>SQL</span> <span>JavaScript</span>
-                        </div>
-                        <div>
-                            <strong>AI/ML:</strong>
-                            <span>Pandas</span><span>scikit-learn</span><span>PyTorch</span>
-                        </div>
-                        <div>
-                            <strong>Data Viz:</strong>
-                            <span>Power BI</span><span>Tableau</span>
-                        </div>
-                        <div>
-                            <strong>Cloud & Tools:</strong>
-                            <span>Azure</span> <span>Docker</span>
-                        </div>
-                        <!-- Skill Bar Example -->
-                        <div class="skill-bar-box">
-                            <label>ML Modeling</label>
-                            <div class="bar-bg"><div class="bar-val" data-width="88"></div></div>
-                        </div>
-                        <div class="skill-bar-box">
-                            <label>Scripting</label>
-                            <div class="bar-bg"><div class="bar-val" data-width="82"></div></div>
-                        </div>
-                        <div class="skill-bar-box">
-                            <label>Data Viz</label>
-                            <div class="bar-bg"><div class="bar-val" data-width="90"></div></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-body" id="career">
-                    <div class="career-list">
-                        <div>
-                            <span class="position-title">Data Analyst Intern</span>
-                            <span>Future Corp</span>
-                            <span class="period">2024</span>
-                            <ul>
-                                <li>Created dashboards for sales trends using Power BI & SQL</li>
-                                <li>Forecasted KPIs using linear regression (Python)</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <span class="position-title">ML Trainee</span>
-                            <span>AI Startup</span>
-                            <span class="period">2023</span>
-                            <ul>
-                                <li>Assisted in building anomaly detection systems with PyTorch</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-body" id="edu">
-                    <div class="edu-list">
-                        <div>
-                            <span class="degree">B.Sc. Computer Science</span>
-                            <em>Big Data, Applied ML</em>
-                            <span class="period">2021-2024</span>
-                        </div>
-                        <div>
-                            <span class="degree">Certification: Azure Data Scientist</span>
-                            <span class="period">2023</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="contact">
+    <h2>Contact</h2>
+    <p>
+        Let's connect for jobs, freelance work, or data collaborations!
+    </p>
+    <div class="contact-list">
+        <div><i class='bx bx-envelope'></i> <a href="mailto:varnicasharma1515@gmail.com">varnicasharma1515@gmail.com</a></div>
+        <div><i class='bx bx-phone'></i> <a href="tel:+919000000000">+91 9000000000</a></div>
+        <div><i class='bx bx-map'></i> Based in India (Remote/Hybrid)</div>
+    </div>
+    <div class="cta-row">
+        <a href="mailto:varnicasharma1515@gmail.com" class="btn secondary">Send Email</a>
+    </div>
+</section>
 
-    <section id="work" class="work-section">
-        <h2>Projects</h2>
-        <div class="proj-grid">
-            <div class="proj-card live">
-                <div class="status-badge"><i class='bx bx-bolt'></i> LIVE</div>
-                <div class="proj-icon"><i class='bx bx-dna'></i></div>
-                <h3>Genetic Diseases Predictor</h3>
-                <p>ML-driven pipeline that predicts genetic disorder risks, with a Streamlit web demo.</p>
-                <div class="tags"><span>Python</span><span>scikit-learn</span><span>Bioinformatics</span></div>
-                <a href="https://demo-app-yourname.streamlit.app" class="proj-cta" target="_blank">View App</a>
-            </div>
-            <div class="proj-card">
-                <div class="status-badge"><i class='bx bx-code'></i> DEMO</div>
-                <div class="proj-icon"><i class='bx bx-chart'></i></div>
-                <h3>Sales Dashboard Automation</h3>
-                <p>A dashboard that automates analysis of multi-channel sales with clean visual stories.</p>
-                <div class="tags"><span>Power BI</span><span>SQL</span></div>
-                <a href="https://github.com/YOURUSERNAME/sales-dashboard" class="proj-cta" target="_blank">Source</a>
-            </div>
-            <!-- More Project Cards -->
-        </div>
-    </section>
-
-    <section id="contact" class="contact-section">
-        <h2>Let’s Connect</h2>
-        <p>Interested in collaborating, need help with data, or want to chat about analytics? Drop me a line!</p>
-        <div class="contact-row">
-            <div><i class='bx bx-phone'></i> +91 9000000000</div>
-            <div><i class='bx bx-mail-send'></i> youremail@example.com</div>
-            <div><i class='bx bx-map'></i> Remote/Hybrid</div>
-        </div>
-        <div class="quick-actions">
-            <a href="tel:+919000000000" class="btn green-btn"><i class='bx bx-phone-call'></i> Call Now</a>
-            <a href="mailto:youremail@example.com" class="btn blue-btn"><i class='bx bx-send'></i> Send Email</a>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-inner">
-            <span>&copy; 2025 Your Name. Crafted with ❤️ for data.</span>
-            <a href="#intro" class="top-link"><i class='bx bx-up-arrow-alt'></i></a>
-        </div>
-    </footer>
-    <script src="main.js"></script>
+<footer>
+    <span>&copy; 2025 Varnica Sharma</span>
+    <a href="#home" class="top-link" title="Back to Top"><i class='bx bx-up-arrow-alt'></i></a>
+</footer>
+<script src="main.js"></script>
 </body>
 </html>
