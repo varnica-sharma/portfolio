@@ -84,7 +84,6 @@ header nav a.active {
   100% {transform: translateY(0) translateX(0);}
 }
 
-/* HERO SECTION */
 .hero {
   display: flex;
   align-items: center;
