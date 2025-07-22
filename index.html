@@ -1,131 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Varnica Sharma - Data Scientist</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="main.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" />
 </head>
 <body>
-<div class="floating-tags-hero" id="floating-tags"></div>
+  <!-- Floating tags container -->
+  <div class="floating-tags-hero" id="floating-tags"></div>
 
-<header>
-  <div class="logo">Varnica Sharma</div>
-  <nav>
-    <a href="#home" class="active">Home</a>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <header>
+    <div class="logo">Varnica Sharma</div>
+    <nav>
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<section id="home" class="hero">
-  <div class="hero-content">
-    <div class="status-badge"><i class='bx bx-check-circle'></i> Available for Work</div>
-    <h1>
-      Data <span class="gradient-highlight">Scientist</span>
-    </h1>
-    <div class="typewriter">
-      <span id="typewriter"></span><span class="cursor">|</span>
-    </div>
-    <p class="hero-desc">
-      Transforming data into insight with <span>AI</span>, <span>bioinformatics</span>, and ML-powered analytics.
-    </p>
-    <div class="cta-row">
-      <a href="Varnica_Sharma_Resume.pdf" download class="btn primary"><i class="bx bx-download"></i> Download CV</a>
-    </div>
-    <div class="social-row">
-      <a href="https://www.linkedin.com/feed/" target="_blank" title="LinkedIn"><i class="bx bxl-linkedin"></i></a>
-      <a href="https://github.com/varnica-sharma" target="_blank" title="GitHub"><i class="bx bxl-github"></i></a>
-    </div>
-  </div>
-</section>
-
-<section id="about">
-  <h2>About Me</h2>
-  <div class="about-btn-bar">
-    <button class="about-btn active" data-target="skills">Technical Skills</button>
-    <button class="about-btn" data-target="experience">Experience</button>
-    <button class="about-btn" data-target="education">Education</button>
-  </div>
-  <div id="about-content-skills" class="about-content-card active">
-    <ul>
-      <li><strong>Languages:</strong> Python, R, SQL, Pandas, NumPy</li>
-      <li><strong>ML/AI:</strong> scikit-learn, PyTorch, TensorFlow, Streamlit, Bioinformatics, Deep Learning, ML</li>
-      <li><strong>Data Viz:</strong> Tableau, Excel</li>
-    </ul>
-  </div>
-  <div id="about-content-experience" class="about-content-card">
-    <ul>
-      <li><b>Data Science Intern</b>, Bharat Intern <em>(Sep-Oct 2023)</em><br>Healthcare ML models, data visualization.</li>
-      <li><b>Data Science Intern</b>, Code Clause <em>(Oct-Nov 2023)</em><br>Real-world datasets, statistical analysis, ML in production.</li>
-    </ul>
-  </div>
-  <div id="about-content-education" class="about-content-card">
-    <ul>
-      <li><b>M.Sc. Data Science</b>, MAHE <em>(2024-2026)</em></li>
-      <li><b>B.Sc. Computer Science</b> (2021-2024)<br>Focus: Statistics & Math, Data Science</li>
-    </ul>
-  </div>
-</section>
-
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="projects-grid">
-    <div class="project-card">
-      <div class="card-badge live">LIVE</div>
-      <h3>Multi-Omics Alzheimer Diagnosis</h3>
-      <p>
-        Predicts Alzheimer's stage from omics data with AI.<br>
-        Features: confidence graphs, Streamlit UI.
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="status-badge"><i class="bx bx-check-circle"></i> Available for Work</div>
+      <h1>
+        Data <span class="gradient-highlight">Scientist</span>
+      </h1>
+      <div class="typewriter">
+        <span id="typewriter"></span><span class="cursor">|</span>
+      </div>
+      <p class="hero-desc">
+        Transforming data into insight with <span>AI</span>, <span>bioinformatics</span>, and ML-powered analytics.
       </p>
-      <div class="tags">
-        <span>GCN</span>
-        <span>Streamlit</span>
-        <span>Bioinformatics</span>
-        <span>PyTorch</span>
+      <div class="cta-row">
+        <a href="Varnica_Sharma_Resume.pdf" download class="btn primary"
+          ><i class="bx bx-download"></i> Download CV</a
+        >
       </div>
-      <div class="project-links">
-        <a href="https://multi-omics-alzheimer-diagnosis.streamlit.app" target="_blank" class="btn main-btn">Live Demo</a>
-        <a href="https://github.com/varnica-sharma/Multi-Omics-Alzheimer-Diagnosis" target="_blank" class="btn link-btn">GitHub</a>
-      </div>
-    </div>
-    <div class="project-card">
-      <div class="card-badge live">LIVE</div>
-      <h3>Chemo-Response Predictor</h3>
-      <p>
-        Predicts chemotherapeutic response using genetic and clinical features.<br>
-        ML-powered backend, clean deployment.
-      </p>
-      <div class="tags">
-        <span>ML</span>
-        <span>Python</span>
-        <span>Healthcare</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/varnica-sharma/Chemo-Response-Predictor?tab=readme-ov-file" target="_blank" class="btn main-btn">Demo</a>
-        <a href="https://github.com/varnica-sharma/Chemo-Response-Predictor" target="_blank" class="btn link-btn">GitHub</a>
+      <div class="social-row">
+        <a href="https://www.linkedin.com/feed/" target="_blank" title="LinkedIn"
+          ><i class="bx bxl-linkedin"></i
+        ></a>
+        <a href="https://github.com/varnica-sharma" target="_blank" title="GitHub"
+          ><i class="bx bxl-github"></i
+        ></a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="contact-methods">
-    <a class="contact-card" href="mailto:varnicasharma1515@gmail.com" target="_blank"><i class='bx bx-envelope'></i>Email</a>
-    <a class="contact-card" href="tel:+919000000000"><i class='bx bx-phone'></i>Call</a>
-    <a class="contact-card" href="https://www.linkedin.com/feed/" target="_blank"><i class='bx bxl-linkedin'></i>LinkedIn</a>
-  </div>
-  <p>Let's connect for jobs, projects, or research collaborations!</p>
-</section>
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-btn-bar">
+      <button class="about-btn active" data-target="skills">Technical Skills</button>
+      <button class="about-btn" data-target="experience">Experience</button>
+      <button class="about-btn" data-target="education">Education</button>
+    </div>
+    <div id="about-content-skills" class="about-content-card active">
+      <ul>
+        <li><strong>Languages:</strong> Python, R, SQL, Pandas, NumPy</li>
+        <li>
+          <strong>ML/AI:</strong> scikit-learn, PyTorch, TensorFlow, Streamlit,
+          Bioinformatics, Deep Learning, ML
+        </li>
+        <li><strong>Data Viz:</strong> Tableau, Excel</li>
+      </ul>
+    </div>
+    <div id="about-content-experience" class="about-content-card">
+      <ul>
+        <li>
+          <b>Data Science Intern</b>, Bharat Intern <em>(Sep-Oct 2023)</em
+          ><br />
+          Healthcare ML models, data visualization.
+        </li>
+        <li>
+          <b>Data Science Intern</b>, Code Clause <em>(Oct-Nov 2023)</em><br />
+          Real-world datasets, statistical analysis, ML in production.
+        </li>
+      </ul>
+    </div>
+    <div id="about-content-education" class="about-content-card">
+      <ul>
+        <li><b>M.Sc. Data Science</b>, MAHE <em>(2024-2026)</em></li>
+        <li>
+          <b>B.Sc. Computer Science</b> (2021-2024)<br />
+          Focus: Statistics & Math, Data Science
+        </li>
+      </ul>
+    </div>
+  </section>
 
-<footer>
-  <span>&copy; 2025 Varnica Sharma</span>
-  <a href="#home" class="top-link" title="Back to Top"><i class='bx bx-up-arrow-alt'></i></a>
-</footer>
-<script src="main.js"></script>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="card-badge live">LIVE</div>
+        <h3>Multi-Omics Alzheimer Diagnosis</h3>
+        <p>
+          Predicts Alzheimer's stage from omics data with AI.<br />
+          Features: confidence graphs, Streamlit UI.
+        </p>
+        <div class="tags">
+          <span>GCN</span>
+          <span>Streamlit</span>
+          <span>Bioinformatics</span>
+          <span>PyTorch</span>
+        </div>
+        <div class="project-links">
+          <a
+            href="https://multi-omics-alzheimer-diagnosis.streamlit.app"
+            target="_blank"
+            class="btn main-btn"
+            >Live Demo</a
+          >
+          <a
+            href="https://github.com/varnica-sharma/Multi-Omics-Alzheimer-Diagnosis"
+            target="_blank"
+            class="btn link-btn"
+            >GitHub</a
+          >
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="card-badge live">LIVE</div>
+        <h3>Chemo-Response Predictor</h3>
+        <p>
+          Predicts chemotherapeutic response using genetic and clinical
+          features.<br />
+          ML-powered backend, clean deployment.
+        </p>
+        <div class="tags">
+          <span>ML</span>
+          <span>Python</span>
+          <span>Healthcare</span>
+        </div>
+        <div class="project-links">
+          <a
+            href="https://github.com/varnica-sharma/Chemo-Response-Predictor?tab=readme-ov-file"
+            target="_blank"
+            class="btn main-btn"
+            >Demo</a
+          >
+          <a
+            href="https://github.com/varnica-sharma/Chemo-Response-Predictor"
+            target="_blank"
+            class="btn link-btn"
+            >GitHub</a
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-methods">
+      <a
+        class="contact-card"
+        href="mailto:varnicasharma1515@gmail.com"
+        target="_blank"
+        ><i class="bx bx-envelope"></i>Email</a
+      >
+      <a class="contact-card" href="tel:+919000000000"
+        ><i class="bx bx-phone"></i>Call</a
+      >
+      <a
+        class="contact-card"
+        href="https://www.linkedin.com/feed/"
+        target="_blank"
+        ><i class="bx bxl-linkedin"></i>LinkedIn</a
+      >
+    </div>
+    <p>Let's connect for jobs, projects, or research collaborations!</p>
+  </section>
+
+  <footer>
+    <span>&copy; 2025 Varnica Sharma</span>
+    <a href="#home" class="top-link" title="Back to Top"
+      ><i class="bx bx-up-arrow-alt"></i
+    ></a>
+  </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>
