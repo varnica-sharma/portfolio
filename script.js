@@ -1,26 +1,3 @@
-// ===== THEME TOGGLE =====
-const themeToggle = document.getElementById('theme-toggle');
-const themeIcon = document.getElementById('theme-icon');
-const body = document.body;
-
-// Check for saved theme preference or default to 'dark'
-const currentTheme = localStorage.getItem('theme') || 'dark';
-body.setAttribute('data-theme', currentTheme);
-updateThemeIcon(currentTheme);
-
-themeToggle.addEventListener('click', () => {
-    const currentTheme = body.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    body.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateThemeIcon(newTheme);
-});
-
-function updateThemeIcon(theme) {
-    themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-}
-
 // ===== PARTICLES.JS CONFIGURATION =====
 particlesJS('particles-js', {
     particles: {
@@ -125,30 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(typeEffect, 1000);
 });
 
-// ===== COUNTER ANIMATION =====
-function animateCounters() {
-    const counters = document.querySelectorAll('.counter');
-    
-    counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute('data-target'));
-        const duration = 2000;
-        const increment = target / (duration / 16);
-        let current = 0;
-        
-        const updateCounter = () => {
-            current += increment;
-            if (current < target) {
-                counter.textContent = Math.floor(current);
-                requestAnimationFrame(updateCounter);
-            } else {
-                counter.textContent = target;
-            }
-        };
-        
-        updateCounter();
-    });
-}
-
 // ===== SKILL BAR ANIMATION =====
 function animateSkillBars() {
     const skillBars = document.querySelectorAll('.skill-progress');
@@ -236,10 +189,6 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.style.transform = 'translateY(0)';
             
             // Trigger specific animations based on element
-            if (entry.target.classList.contains('stats-container')) {
-                animateCounters();
-            }
-            
             if (entry.target.classList.contains('skills-container')) {
                 animateSkillBars();
             }
@@ -249,7 +198,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe elements for animations
 document.addEventListener('DOMContentLoaded', () => {
-    const elementsToObserve = document.querySelectorAll('.stats-container, .skills-container, .project-card, .about-text');
+    const elementsToObserve = document.querySelectorAll('.skills-container, .project-card, .about-text, .achievement-card');
     
     elementsToObserve.forEach(element => {
         element.style.opacity = '0';
@@ -276,7 +225,7 @@ function initFloatingElements() {
     });
 }
 
-// ===== FORM SUBMISSION =====
+// ===== ENHANCED FORM SUBMISSION =====
 const form = document.forms['submit-to-google-sheet'];
 const msg = document.getElementById('msg');
 
@@ -292,7 +241,7 @@ if (form) {
         
         // Simulate form submission (replace with your actual form handler)
         setTimeout(() => {
-            msg.innerHTML = "Message sent successfully!";
+            msg.innerHTML = "✅ Message sent successfully! I'll get back to you soon.";
             msg.className = "form-message success";
             
             // Reset form
@@ -308,32 +257,76 @@ if (form) {
                 msg.className = "form-message";
             }, 5000);
         }, 2000);
-        
-        // If you have Google Sheets integration, uncomment and modify this:
-        /*
-        const scriptURL = 'YOUR_GOOGLE_SCRIPT_URL';
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                msg.innerHTML = "Message sent successfully!";
-                msg.className = "form-message success";
-                form.reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                setTimeout(() => {
-                    msg.innerHTML = "";
-                    msg.className = "form-message";
-                }, 5000);
-            })
-            .catch(error => {
-                console.error('Error!', error.message);
-                msg.innerHTML = "Error sending message. Please try again.";
-                msg.className = "form-message error";
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            });
-        */
     });
 }
+
+// ===== SMOOTH BACK TO TOP =====
+document.querySelector('.back-to-top').addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// ===== PROJECT CARD INTERACTIONS =====
+document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-12px) scale(1.02)';
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0) scale(1)';
+    });
+});
+
+// ===== ACHIEVEMENT CARD ANIMATIONS =====
+document.querySelectorAll('.achievement-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        const icon = card.querySelector('.achievement-icon');
+        icon.style.transform = 'scale(1.1) rotate(5deg)';
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        const icon = card.querySelector('.achievement-icon');
+        icon.style.transform = 'scale(1) rotate(0deg)';
+    });
+});
+
+// ===== FLOATING ICON CLICK EFFECTS =====
+document.querySelectorAll('.float-item').forEach(item => {
+    item.addEventListener('click', () => {
+        // Create ripple effect
+        const ripple = document.createElement('div');
+        ripple.style.position = 'absolute';
+        ripple.style.width = '100px';
+        ripple.style.height = '100px';
+        ripple.style.background = 'rgba(0, 217, 255, 0.3)';
+        ripple.style.borderRadius = '50%';
+        ripple.style.transform = 'scale(0)';
+        ripple.style.animation = 'ripple 0.6s linear';
+        ripple.style.pointerEvents = 'none';
+        
+        item.style.position = 'relative';
+        item.appendChild(ripple);
+        
+        setTimeout(() => {
+            ripple.remove();
+        }, 600);
+    });
+});
+
+// Add ripple animation
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes ripple {
+        to {
+            transform: scale(2);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(style);
 
 // ===== EVENT LISTENERS =====
 window.addEventListener('scroll', () => {
@@ -383,25 +376,6 @@ window.addEventListener('scroll', () => {
     }, 10);
 });
 
-// Preload critical assets
-const preloadAssets = () => {
-    const linkElements = [
-        'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap',
-        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css'
-    ];
-    
-    linkElements.forEach(href => {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = 'style';
-        link.href = href;
-        document.head.appendChild(link);
-    });
-};
-
-// Initialize preloading
-preloadAssets();
-
 // ===== EASTER EGG =====
 let clickCount = 0;
 document.querySelector('.logo-text').addEventListener('click', () => {
@@ -413,4 +387,28 @@ document.querySelector('.logo-text').addEventListener('click', () => {
             clickCount = 0;
         }, 2000);
     }
+});
+
+// ===== SOCIAL LINK TRACKING =====
+document.querySelectorAll('.social-icon, .method-details a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        console.log(`User clicked: ${href}`);
+        // You can add analytics tracking here
+    });
+});
+
+// ===== LOADING SCREEN (OPTIONAL) =====
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+    
+    // Trigger entrance animations
+    setTimeout(() => {
+        document.querySelectorAll('.achievement-card').forEach((card, index) => {
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, index * 150);
+        });
+    }, 500);
 });
