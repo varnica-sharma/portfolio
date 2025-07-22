@@ -326,4 +326,129 @@ h2 {
   color: var(--iris);
   font-size: 1.17em;
   font-weight: 800;
-  margin
+  margin: 0.5em 0 0.3em 0;
+}
+.project-card p {
+  color: #232c46;
+  font-size: 1em;
+  margin-bottom: 0.8em;
+}
+.tags {
+  display: flex;
+  gap: 0.5em;
+  margin-bottom: 1em;
+}
+.tags span {
+  background: #f6eaed;
+  color: var(--iris);
+  border-radius: 1em;
+  padding: 0.13em 0.75em;
+  font-size: 0.93em;
+  font-weight: bold;
+  border: 1.2px dashed var(--mint);
+}
+.project-links {
+  display: flex;
+  gap: 0.7em;
+}
+.project-links .btn {
+  padding: 0.5em 1.2em;
+  font-size: 0.99em;
+  box-shadow: 0 3px 12px 0 rgba(132, 106, 211, 0.13);
+}
+.project-links .btn:hover {
+  background: var(--iris);
+  color: #fff;
+}
+
+/* CONTACT CARDS */
+.contact-methods {
+  display: flex;
+  gap: 1.1em;
+  margin-bottom: 1.2em;
+  flex-wrap: wrap;
+}
+.contact-card {
+  background: linear-gradient(100deg, #edeafb, #7beccd1a 70%, #fff);
+  color: var(--iris);
+  border-radius: 1.5em;
+  padding: 1.1em 2.1em;
+  font-weight: 700;
+  font-size: 1.1em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  box-shadow: 0 4px 15px 0 rgba(123, 230, 205, 0.11);
+  transition: background 0.14s, color 0.15s, box-shadow 0.13s, transform 0.13s;
+  margin-bottom: 0.75em;
+}
+.contact-card:hover {
+  background: var(--iris);
+  color: #fff;
+  box-shadow: 0 8px 26px 0 rgba(123, 230, 205, 0.18);
+  transform: translateY(-4px);
+}
+.contact-card i {
+  font-size: 1.3em;
+}
+
+/* FOOTER */
+footer {
+  background: var(--iris);
+  color: #fff;
+  text-align: center;
+  padding: 1.3em 0 0.9em 0;
+  font-size: 1em;
+  position: relative;
+}
+.top-link {
+  background: var(--mint);
+  color: var(--midnight);
+  border-radius: 50%;
+  width: 2.2em;
+  height: 2.2em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 12vw;
+  top: 0.87em;
+  font-size: 1.3em;
+  text-decoration: none;
+  transition: background 0.22s;
+}
+.top-link:hover {
+  background: var(--cyan);
+  color: var(--midnight);
+}
+
+@media (max-width: 850px) {
+  .about-btn-bar,
+  .about-cards,
+  .projects-grid,
+  .contact-methods {
+    flex-direction: column;
+  }
+  header,
+  section {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+  .floating-tags-hero {
+    right: 1vw;
+  }
+}
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.3rem;
+  }
+  h1 {
+    font-size: 1.4rem;
+  }
+  header,
+  section {
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+}
