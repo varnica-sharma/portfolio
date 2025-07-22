@@ -4,9 +4,11 @@ const tags = [
   "Data Mining", "Streamlit", "PyTorch", "Healthcare AI", "Statistics", "Visualization",
   "R Programming", "ML Ops", "Predictive Modeling", "Analytics", "Data Engineering"
 ];
+// Calculated positions so tags float across hero area, not overlapping
 const heroTagPositions = [
-  [10, 48], [24, 10], [32, 85], [60, 20], [56, 55], [12, 65], [85, 30], [77, 71], [45, 10], [55, 75],
-  [68, 45], [30, 57], [82, 50], [22, 28], [75, 66]
+  [30, 12], [80, 9], [110, 32], [58, 68], [160, 21],
+  [40, 82], [90, 55], [190, 24], [130, 75], [120, 44],
+  [170, 30], [53, 51], [180, 67], [200, 13], [195, 65]
 ];
 const tagsContainer = document.getElementById('floating-tags');
 tags.forEach((text, idx) => {
@@ -14,7 +16,7 @@ tags.forEach((text, idx) => {
   tag.className = 'float-tag';
   tag.style.top = heroTagPositions[idx][0] + 'px';
   tag.style.left = `calc(${heroTagPositions[idx][1]}vw)`;
-  tag.style.animationDelay = (idx * 0.4) + 's';
+  tag.style.animationDelay = (idx * 0.37) + 's';
   tag.innerHTML = `<i class='bx bx-badge-check'></i> ${text}`;
   tagsContainer.appendChild(tag);
 });
@@ -47,11 +49,11 @@ function typeWriter() {
       roleIndex = (roleIndex + 1) % roles.length;
     }
   }
-  setTimeout(typeWriter, deleting ? 41 : 111);
+  setTimeout(typeWriter, deleting ? 41 : 113);
 }
 window.onload = typeWriter;
 
-// ABOUT ME TABS
+// ABOUT ME TABS - interactive opening/closing
 const aboutTabs = document.querySelectorAll('.about-btn');
 const aboutCards = document.querySelectorAll('.about-content-card');
 aboutTabs.forEach(tab => {
