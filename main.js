@@ -1,27 +1,27 @@
-// FLOATING TAGS HERO (now spread in hero area only)
+// FLOATING TAGS HERO
 const tags = [
   "Machine Learning", "Bioinformatics", "Graph Networks", "Deep Learning",
   "Data Mining", "Streamlit", "PyTorch", "Healthcare AI", "Statistics", "Visualization",
   "R Programming", "ML Ops", "Predictive Modeling", "Analytics", "Data Engineering"
 ];
-// Calculated positions so tags float across hero area, not overlapping
-const heroTagPositions = [
-  [30, 12], [80, 9], [110, 32], [58, 68], [160, 21],
-  [40, 82], [90, 55], [190, 24], [130, 75], [120, 44],
-  [170, 30], [53, 51], [180, 67], [200, 13], [195, 65]
+// Spread tags around the hero area
+const positions = [
+  [30, 15], [85, 13], [60, 25], [140, 60], [100, 80],
+  [55, 78], [120, 50], [170, 26], [180, 70], [115, 10],
+  [180, 40], [95, 60], [160, 85], [53, 51], [130, 44]
 ];
 const tagsContainer = document.getElementById('floating-tags');
 tags.forEach((text, idx) => {
   const tag = document.createElement('div');
   tag.className = 'float-tag';
-  tag.style.top = heroTagPositions[idx][0] + 'px';
-  tag.style.left = `calc(${heroTagPositions[idx][1]}vw)`;
-  tag.style.animationDelay = (idx * 0.37) + 's';
+  tag.style.top = positions[idx][0] + 'px';
+  tag.style.left = `calc(${positions[idx][1]}vw)`;
+  tag.style.animationDelay = (idx * 0.3) + 's';
   tag.innerHTML = `<i class='bx bx-badge-check'></i> ${text}`;
   tagsContainer.appendChild(tag);
 });
 
-// TYPEWRITER
+// Typewriter animation for role headline
 const roles = [
   "Healthcare Data Specialist",
   "Bioinformatics Enthusiast",
@@ -39,7 +39,7 @@ function typeWriter() {
     el.textContent = current.substring(0, charIndex + 1);
     if (++charIndex === current.length) {
       deleting = true;
-      setTimeout(typeWriter, 1100);
+      setTimeout(typeWriter, 1200);
       return;
     }
   } else {
@@ -49,11 +49,11 @@ function typeWriter() {
       roleIndex = (roleIndex + 1) % roles.length;
     }
   }
-  setTimeout(typeWriter, deleting ? 41 : 113);
+  setTimeout(typeWriter, deleting ? 43 : 111);
 }
 window.onload = typeWriter;
 
-// ABOUT ME TABS - interactive opening/closing
+// ABOUT SECTION TABS
 const aboutTabs = document.querySelectorAll('.about-btn');
 const aboutCards = document.querySelectorAll('.about-content-card');
 aboutTabs.forEach(tab => {
