@@ -2,204 +2,139 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Varnica Sharma - Data Science Portfolio</title>
-    <meta name="description" content="Varnica Sharma - M.Sc. Data Science student specializing in Machine Learning, Healthcare AI, and Deep Learning projects">
-    <link rel="stylesheet" href="style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Your Name - Data Professional Portfolio</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Particle Background -->
-    <div id="particles-js"></div>
-    
-    <!-- Floating Background Elements -->
-    <div class="bg-animations">
-        <div class="floating-cube cube-1"></div>
-        <div class="floating-cube cube-2"></div>
-        <div class="floating-cube cube-3"></div>
-        <div class="floating-sphere sphere-1"></div>
-        <div class="floating-sphere sphere-2"></div>
-    </div>
+    <div id="bg-animated"></div>
 
-    <!-- Header -->
-    <header class="glass-header">
-        <div class="logo-container">
-            <span class="logo-text">Varnica</span>
-        </div>
-        <ul class="navlist glass">
-            <li><a href="#home" class="nav-link active">Home</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#projects" class="nav-link">Projects</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-        <div id="menu-icon" class="bx bx-menu glass-btn"></div>
+    <header>
+        <div class="brand">Your Name</div>
+        <nav>
+            <ul id="site-nav">
+                <li><a href="#intro">Intro</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div id="nav-toggle"><i class='bx bx-menu'></i></div>
+        </nav>
     </header>
 
-    <!-- Enhanced Hero Section -->
-    <section id="home" class="home">
-        <div class="hero-container">
-            <div class="home-content">
-                <div class="availability-status glass">
-                    <div class="status-indicator">
-                        <span class="status-dot pulse"></span>
-                        <span class="status-text">Available for Opportunities</span>
-                    </div>
-                </div>
-                
-                <h1 class="hero-title">
-                    Hi, I'm <span class="name-gradient">Varnica Sharma</span>
-                </h1>
-                
-                <div class="role-display">
-                    <h2 class="hero-subtitle">
-                        <span class="typing-text"></span>
-                        <span class="typing-cursor"></span>
-                    </h2>
-                </div>
+    <section id="intro" class="intro-section">
+        <div class="intro-content">
+            <div class="availability"><i class='bx bx-broadcast'></i> Available for new roles</div>
+            <h1>
+                <span class="job-title">Data <em class="focus-anim">Analyst</em></span>
+            </h1>
+            <div class="typewriter"><span id="typed-txt"></span><span class="cursor">|</span></div>
+            <p class="tagline">
+                Unlocking value from data with <span>clever analysis</span>, <span>AI models</span>, and <span>clear visualizations</span>.
+            </p>
+            <div class="cta-row">
+                <a href="assets/my_cv.pdf" class="btn main-btn" download>
+                    <i class='bx bx-cloud-download'></i> Download CV
+                </a>
+                <a href="mailto:youremail@example.com" class="btn secondary-btn">
+                    <i class='bx bx-envelope'></i> Contact Me
+                </a>
+            </div>
+            <div class="socials">
+                <a href="https://linkedin.com/in/YOURPROFILE" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/YOURUSERNAME" target="_blank"><i class='bx bxl-github'></i></a>
+            </div>
+        </div>
+        <aside class="skills-cards">
+            <div class="card-item"><i class='bx bx-cube'></i><span>AI</span></div>
+            <div class="card-item"><i class='bx bx-data'></i><span>Databases</span></div>
+            <div class="card-item"><i class='bx bx-line-chart'></i><span>Analytics</span></div>
+            <div class="card-item"><i class='bx bx-slider'></i><span>Automation</span></div>
+            <div class="card-item"><i class='bx bx-palette'></i><span>Viz Design</span></div>
+        </aside>
+    </section>
 
-                <p class="hero-description">
-                    M.Sc. Data Science student passionate about transforming healthcare through intelligent data solutions and cutting-edge machine learning research.
+    <section id="profile" class="profile-section">
+        <h2>About Me</h2>
+        <div class="profile-grid">
+            <div class="bio">
+                <p>
+                    I am a data and machine learning enthusiast, passionate about crafting smart solutions to real-world analytics challenges.
+                    Equally comfortable with logic and creativity, I thrive at the intersection of code, numbers, and user impact.
                 </p>
-
-                <div class="education-highlight">
-                    <div class="education-card glass">
-                        <div class="education-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="education-content">
-                            <h3>M.Sc. Data Science</h3>
-                            <p>Manipal Academy of Higher Education</p>
-                            <div class="education-period">
-                                <span class="period-text">2024 - 2026</span>
-                                <div class="progress-indicator">
-                                    <div class="progress-bar">
-                                        <div class="progress-fill" style="width: 50%"></div>
-                                    </div>
-                                    <span class="progress-text">In Progress</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Fixed CTA Section -->
-                <div class="cta-section">
-                    <div class="primary-actions">
-                        <a href="images/Varnica_Resume.pdf" download class="btn btn-primary glass-btn">
-                            <i class="fas fa-download"></i>
-                            <span>Get Resume</span>
-                            <div class="btn-glow"></div>
-                        </a>
-                        <a href="#projects" class="btn btn-secondary glass-btn">
-                            <i class="fas fa-rocket"></i>
-                            <span>View Projects</span>
-                        </a>
-                    </div>
-                    
-                    <div class="quick-connect">
-                        <span class="connect-label">Quick Connect:</span>
-                        <div class="social-cluster">
-                            <a href="https://github.com/varnica-sharma" target="_blank" class="social-link glass" data-tooltip="GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/varnica-sharma/" target="_blank" class="social-link glass" data-tooltip="LinkedIn">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="mailto:varnicasharma1515@gmail.com" class="social-link glass" data-tooltip="Email">
-                                <i class="fas fa-envelope"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
             </div>
-
-            <!-- Enhanced Data Visualization -->
-            <div class="hero-visual">
-                <div class="data-matrix">
-                    <div class="matrix-bg"></div>
-                    <div class="data-flow">
-                        <div class="data-stream stream-1"></div>
-                        <div class="data-stream stream-2"></div>
-                        <div class="data-stream stream-3"></div>
-                        <div class="data-stream stream-4"></div>
+            <div class="tabs">
+                <div class="tab-bar">
+                    <button class="tab-btn active" data-tab="skills"><i class='bx bx-code-block'></i> Skills</button>
+                    <button class="tab-btn" data-tab="career"><i class='bx bx-timer'></i> Career</button>
+                    <button class="tab-btn" data-tab="edu"><i class='bx bx-book-open'></i> Education</button>
+                </div>
+                <div class="tab-body active" id="skills">
+                    <div class="skills-list">
+                        <div>
+                            <strong>Languages:</strong>
+                            <span>Python</span> <span>SQL</span> <span>JavaScript</span>
+                        </div>
+                        <div>
+                            <strong>AI/ML:</strong>
+                            <span>Pandas</span><span>scikit-learn</span><span>PyTorch</span>
+                        </div>
+                        <div>
+                            <strong>Data Viz:</strong>
+                            <span>Power BI</span><span>Tableau</span>
+                        </div>
+                        <div>
+                            <strong>Cloud & Tools:</strong>
+                            <span>Azure</span> <span>Docker</span>
+                        </div>
+                        <!-- Skill Bar Example -->
+                        <div class="skill-bar-box">
+                            <label>ML Modeling</label>
+                            <div class="bar-bg"><div class="bar-val" data-width="88"></div></div>
+                        </div>
+                        <div class="skill-bar-box">
+                            <label>Scripting</label>
+                            <div class="bar-bg"><div class="bar-val" data-width="82"></div></div>
+                        </div>
+                        <div class="skill-bar-box">
+                            <label>Data Viz</label>
+                            <div class="bar-bg"><div class="bar-val" data-width="90"></div></div>
+                        </div>
                     </div>
-                    
-                    <div class="neural-network-3d">
-                        <div class="node-layer layer-1">
-                            <div class="neural-node" data-delay="0s"></div>
-                            <div class="neural-node" data-delay="0.2s"></div>
-                            <div class="neural-node" data-delay="0.4s"></div>
+                </div>
+                <div class="tab-body" id="career">
+                    <div class="career-list">
+                        <div>
+                            <span class="position-title">Data Analyst Intern</span>
+                            <span>Future Corp</span>
+                            <span class="period">2024</span>
+                            <ul>
+                                <li>Created dashboards for sales trends using Power BI & SQL</li>
+                                <li>Forecasted KPIs using linear regression (Python)</li>
+                            </ul>
                         </div>
-                        <div class="node-layer layer-2">
-                            <div class="neural-node" data-delay="0.6s"></div>
-                            <div class="neural-node" data-delay="0.8s"></div>
-                            <div class="neural-node" data-delay="1s"></div>
-                            <div class="neural-node" data-delay="1.2s"></div>
+                        <div>
+                            <span class="position-title">ML Trainee</span>
+                            <span>AI Startup</span>
+                            <span class="period">2023</span>
+                            <ul>
+                                <li>Assisted in building anomaly detection systems with PyTorch</li>
+                            </ul>
                         </div>
-                        <div class="node-layer layer-3">
-                            <div class="neural-node" data-delay="1.4s"></div>
-                            <div class="neural-node" data-delay="1.6s"></div>
-                        </div>
-                        
-                        <!-- Animated Connections -->
-                        <svg class="neural-connections" viewBox="0 0 400 300">
-                            <defs>
-                                <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                    <stop offset="0%" style="stop-color:#00D9FF;stop-opacity:0" />
-                                    <stop offset="50%" style="stop-color:#00D9FF;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:0" />
-                                </linearGradient>
-                            </defs>
-                            
-                            <!-- Layer 1 to Layer 2 connections -->
-                            <line class="connection" x1="80" y1="75" x2="200" y2="60" stroke="url(#connectionGradient)" stroke-width="2">
-                                <animate attributeName="stroke-dasharray" values="0,200;100,100;0,200" dur="3s" repeatCount="indefinite"/>
-                            </line>
-                            <line class="connection" x1="80" y1="150" x2="200" y2="90" stroke="url(#connectionGradient)" stroke-width="2">
-                                <animate attributeName="stroke-dasharray" values="0,200;100,100;0,200" dur="3s" begin="0.5s" repeatCount="indefinite"/>
-                            </line>
-                            <line class="connection" x1="80" y1="225" x2="200" y2="180" stroke="url(#connectionGradient)" stroke-width="2">
-                                <animate attributeName="stroke-dasharray" values="0,200;100,100;0,200" dur="3s" begin="1s" repeatCount="indefinite"/>
-                            </line>
-                            
-                            <!-- Layer 2 to Layer 3 connections -->
-                            <line class="connection" x1="240" y1="90" x2="320" y2="120" stroke="url(#connectionGradient)" stroke-width="2">
-                                <animate attributeName="stroke-dasharray" values="0,200;100,100;0,200" dur="3s" begin="1.5s" repeatCount="indefinite"/>
-                            </line>
-                            <line class="connection" x1="240" y1="180" x2="320" y2="180" stroke="url(#connectionGradient)" stroke-width="2">
-                                <animate attributeName="stroke-dasharray" values="0,200;100,100;0,200" dur="3s" begin="2s" repeatCount="indefinite"/>
-                            </line>
-                        </svg>
                     </div>
-                    
-                    <!-- Floating Tech Icons -->
-                    <div class="tech-constellation">
-                        <div class="tech-orbit orbit-1">
-                            <div class="tech-satellite" data-tech="Python">
-                                <i class="fab fa-python"></i>
-                            </div>
+                </div>
+                <div class="tab-body" id="edu">
+                    <div class="edu-list">
+                        <div>
+                            <span class="degree">B.Sc. Computer Science</span>
+                            <em>Big Data, Applied ML</em>
+                            <span class="period">2021-2024</span>
                         </div>
-                        <div class="tech-orbit orbit-2">
-                            <div class="tech-satellite" data-tech="AI">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <div class="tech-satellite" data-tech="Data">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                        </div>
-                        <div class="tech-orbit orbit-3">
-                            <div class="tech-satellite" data-tech="Healthcare">
-                                <i class="fas fa-heartbeat"></i>
-                            </div>
-                            <div class="tech-satellite" data-tech="Research">
-                                <i class="fas fa-microscope"></i>
-                            </div>
-                            <div class="tech-satellite" data-tech="Cloud">
-                                <i class="fas fa-cloud"></i>
-                            </div>
+                        <div>
+                            <span class="degree">Certification: Azure Data Scientist</span>
+                            <span class="period">2023</span>
                         </div>
                     </div>
                 </div>
@@ -207,57 +142,49 @@
         </div>
     </section>
 
-    <!-- Rest of sections remain the same -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Passionate about extracting insights from data</p>
+    <section id="work" class="work-section">
+        <h2>Projects</h2>
+        <div class="proj-grid">
+            <div class="proj-card live">
+                <div class="status-badge"><i class='bx bx-bolt'></i> LIVE</div>
+                <div class="proj-icon"><i class='bx bx-dna'></i></div>
+                <h3>Genetic Diseases Predictor</h3>
+                <p>ML-driven pipeline that predicts genetic disorder risks, with a Streamlit web demo.</p>
+                <div class="tags"><span>Python</span><span>scikit-learn</span><span>Bioinformatics</span></div>
+                <a href="https://demo-app-yourname.streamlit.app" class="proj-cta" target="_blank">View App</a>
             </div>
-            <!-- About content stays the same as before -->
-        </div>
-    </section>
-
-    <section id="projects" class="projects-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-subtitle">Innovative solutions in healthcare AI and machine learning</p>
+            <div class="proj-card">
+                <div class="status-badge"><i class='bx bx-code'></i> DEMO</div>
+                <div class="proj-icon"><i class='bx bx-chart'></i></div>
+                <h3>Sales Dashboard Automation</h3>
+                <p>A dashboard that automates analysis of multi-channel sales with clean visual stories.</p>
+                <div class="tags"><span>Power BI</span><span>SQL</span></div>
+                <a href="https://github.com/YOURUSERNAME/sales-dashboard" class="proj-cta" target="_blank">Source</a>
             </div>
-            <!-- Projects content stays the same as before -->
+            <!-- More Project Cards -->
         </div>
     </section>
 
     <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Let's Connect</h2>
-                <p class="section-subtitle">Ready to collaborate? Let's build something amazing together!</p>
-            </div>
-            <!-- Contact content stays the same as before -->
+        <h2>Let’s Connect</h2>
+        <p>Interested in collaborating, need help with data, or want to chat about analytics? Drop me a line!</p>
+        <div class="contact-row">
+            <div><i class='bx bx-phone'></i> +91 9000000000</div>
+            <div><i class='bx bx-mail-send'></i> youremail@example.com</div>
+            <div><i class='bx bx-map'></i> Remote/Hybrid</div>
+        </div>
+        <div class="quick-actions">
+            <a href="tel:+919000000000" class="btn green-btn"><i class='bx bx-phone-call'></i> Call Now</a>
+            <a href="mailto:youremail@example.com" class="btn blue-btn"><i class='bx bx-send'></i> Send Email</a>
         </div>
     </section>
 
-    <footer class="glass-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <p>&copy; 2025 Varnica Sharma. Crafted with precision & creativity.</p>
-                    <span class="footer-tech">Built with React-inspired vanilla JS</span>
-                </div>
-                <a href="#home" class="back-to-top glass">
-                    <i class="fas fa-chevron-up"></i>
-                </a>
-            </div>
+    <footer>
+        <div class="footer-inner">
+            <span>&copy; 2025 Your Name. Crafted with ❤️ for data.</span>
+            <a href="#intro" class="top-link"><i class='bx bx-up-arrow-alt'></i></a>
         </div>
     </footer>
-
-    <div id="copy-toast" class="copy-toast">
-        <i class="fas fa-check"></i>
-        <span>Email copied to clipboard!</span>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="script.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
