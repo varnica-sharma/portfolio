@@ -2,149 +2,264 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Varnica Sharma – Data Scientist</title>
+  <title>Varnica Sharma - Data Scientist</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="main.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" />
+
+  <!-- ALL STYLES EMBEDDED HERE -->
+  <style>
+    :root {
+      --mint: #7beccd;
+      --lavender: #f5f6fa;
+      --midnight: #181b25;
+      --iris: #856ad3;
+      --cyan: #74e4ae;
+      --card: #fff;
+      --badge: #efe6fa;
+      --badge-l: #e9f9f0;
+    }
+
+    body { margin: 0; font-family: 'Inter', Arial, sans-serif; background: var(--lavender); color: var(--midnight); min-height: 100vh; line-height: 1.68; scroll-behavior: smooth; }
+    
+    header { display: flex; justify-content: space-between; align-items: center; padding: 18px 7vw; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); box-shadow: 0 2px 20px 0 rgba(136,106,211,0.08); position: sticky; top: 0; z-index: 10; }
+    .logo { font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--iris); font-size: 2rem; letter-spacing: 2px; }
+    header nav { display: flex; gap: 2.2rem; }
+    header nav a { text-decoration: none; color: var(--midnight); font-weight: 600; font-size: 1.06rem; padding-bottom: 3px; border-bottom: 2px solid transparent; transition: color 0.19s, border 0.23s; }
+    header nav a.active, header nav a:hover { color: var(--iris); border-bottom: 2px solid var(--mint); }
+
+    .floating-tags-hero { pointer-events: none; position: absolute; left: 0; top: 110px; width: 100vw; height: 400px; z-index: 1; overflow: hidden; }
+    .float-tag { background: linear-gradient(120deg, var(--badge), var(--badge-l), #fff 80%); color: var(--iris); padding: 9px 24px 9px 16px; border-radius: 2em; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 14px 0 rgba(123,230,205,0.13); position: absolute; opacity: .91; border: 1.5px solid var(--mint); animation: floatTag 5.5s linear infinite; }
+    @keyframes floatTag { 0% { transform: translateY(0) translateX(0) rotate(0deg); } 30% { transform: translateY(-35px) translateX(25px) rotate(2deg); } 55% { transform: translateY(-15px) translateX(40px) rotate(-2deg); } 80% { transform: translateY(-20px) translateX(10px) rotate(1deg); } 100% { transform: translateY(0) translateX(0) rotate(0deg); } }
+
+    .hero { display: flex; align-items: center; min-height: 85vh; background: var(--lavender); padding: 5vw 7vw 1vw 7vw; position: relative; }
+    .hero-content { max-width: 580px; position: relative; z-index: 2; }
+    .status-badge { background: var(--badge-l); color: var(--cyan); display: inline-flex; align-items: center; gap: 7px; padding: 4px 18px; border-radius: 1.7em; font-weight: bold; margin-bottom: 2rem; }
+    h1 { font-size: 3.2rem; font-family: 'Montserrat', sans-serif; font-weight: 700; margin-bottom: 0.5rem; }
+    .gradient-highlight { background: linear-gradient(90deg, #856ad3, #7beccd 60%, #74e4ae 100%); -webkit-background-clip: text; background-clip: text; color: transparent; animation: moveGradient 3s linear infinite alternate; }
+    @keyframes moveGradient { 0% { background-position: 0 50%; } 100% { background-position: 100% 50%; } }
+    .typewriter { font-size: 1.25rem; font-weight: 700; color: var(--cyan); letter-spacing: 0.02em; margin-bottom: 1.1rem; height: 2rem; }
+    .cursor { color: var(--cyan); animation: blink 0.97s infinite; }
+    @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
+    .hero-desc { color: var(--midnight); font-size: 1.1rem; margin-bottom: 2rem; line-height: 1.7; }
+    .hero-desc span { color: var(--iris); font-weight: 600; }
+    
+    .cta-row { display: flex; gap: 1.1rem; margin-bottom: 2rem; }
+    .btn { padding: 0.92em 2em; border-radius: 2.2em; border: none; font-weight: 700; font-size: 1.01em; display: inline-flex; align-items: center; gap: 0.5em; text-decoration: none; box-shadow: 0 2px 10px 0 rgba(123,230,205,0.11); transition: all 0.2s ease-in-out; cursor: pointer; }
+    .btn.primary { background: var(--iris); color: #fff; }
+    .btn.primary:hover { background: var(--midnight); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(133, 106, 211, 0.3); }
+    .social-row { display: flex; gap: 1.2rem; }
+    .social-row a { font-size: 2.2rem; color: var(--iris); transition: color 0.2s; }
+    .social-row a:hover { color: var(--cyan); }
+
+    section { padding: 5vw 7vw; }
+    h2 { font-size: 2.5rem; color: var(--iris); font-family: 'Montserrat',sans-serif; font-weight: 800; text-align: center; margin-bottom: 2.5rem; }
+
+    .about-btn-bar { display: flex; gap: 1.2em; margin: 2em auto; flex-wrap: wrap; justify-content: center; }
+    .about-btn { background: linear-gradient(100deg,#edeafb,#7beccd1a 70%,#fff); border: 1px solid var(--mint); border-radius: 2em; color: var(--iris); padding: 0.75em 2em; font-weight: 700; font-size: 1em; cursor: pointer; box-shadow: 0 2px 10px 0 rgba(123,230,205,0.1); transition: all 0.2s ease-in-out; outline: none; }
+    .about-btn.active, .about-btn:hover { background: var(--mint); color: var(--midnight); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(123, 230, 205, 0.3); }
+    .about-content-card { display: none; background: var(--card); border-radius: 1em; box-shadow: 0 8px 25px 0 rgba(136,106,211,0.12); padding: 2em; margin: 1.5em auto; max-width: 800px; animation: fadeAcc 0.64s; }
+    @keyframes fadeAcc { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .about-content-card.active { display: block; }
+    .about-content-card ul { list-style: none; padding: 0; }
+    .about-content-card li { margin-bottom: 1rem; font-size: 1.05rem; }
+
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
+    .project-card { background: var(--card); border-radius: 1em; box-shadow: 0 5px 18px 0 rgba(136,106,211,0.1); padding: 2em; position: relative; display: flex; flex-direction: column; transition: all 0.2s ease-in-out; }
+    .project-card:hover { box-shadow: 0 12px 35px 0 rgba(132, 106, 211, 0.25); transform: translateY(-8px) scale(1.03); }
+    .card-badge.live { position: absolute; top: 1.5em; right: 1.5em; background: var(--mint); color: var(--midnight); font-size: 0.84em; font-weight: bold; padding: 0.2em 1em; border-radius: 2em; }
+    .project-card h3 { color: var(--iris); font-size: 1.3rem; font-weight: 800; margin: 0 0 0.5em 0; }
+    .project-card p { color: #232c46; font-size: 1rem; margin-bottom: 1.5em; line-height: 1.6; flex-grow: 1; }
+    .tags { display: flex; gap: 0.7em; margin-bottom: 1.5em; flex-wrap: wrap; }
+    .tags span { background: #f6eaed; color: var(--iris); border-radius: 1em; padding: 0.2em 0.8em; font-size: 0.9em; font-weight: bold; border: 1.2px dashed var(--mint); }
+    .project-links { display: flex; gap: 1em; margin-top: auto; }
+    .project-links .btn { padding: 0.6em 1.5em; font-size: 0.95em; box-shadow: 0 3px 12px 0 rgba(132,106,211,0.13); }
+    .project-links .btn:hover { transform: scale(1.05); }
+    .btn.main-btn { background: var(--mint); }
+    .btn.link-btn { background: #f1e4fa; color: var(--iris); }
+
+    #contact { background: #eef1f8; }
+    .contact-methods { display: flex; gap: 1.5em; margin: 2em auto; flex-wrap: wrap; justify-content: center; }
+    .contact-card { background: linear-gradient(100deg,#edeafb,#7beccd1a 70%,#fff); color: var(--iris); border-radius: 1.5em; padding: 1.5em 2.5em; font-weight: 700; font-size: 1.2em; text-decoration: none; display: flex; align-items: center; gap: 0.8em; box-shadow: 0 4px 15px 0 rgba(123,230,205,0.11); transition: all 0.2s ease-in-out; }
+    .contact-card:hover { background: var(--iris); color: #fff; box-shadow: 0 8px 26px 0 rgba(123,230,205,0.25); transform: translateY(-5px) scale(1.05); }
+    .contact-card i { font-size: 1.5em; }
+
+    footer { background: var(--iris); color: #fff; text-align: center; padding: 1.5em 0 1em 0; font-size: 1em; position: relative; }
+    .top-link { background: var(--mint); color: var(--midnight); border-radius: 50%; width: 2.5em; height: 2.5em; display: inline-flex; align-items: center; justify-content: center; position: absolute; right: 7vw; top: 1em; font-size: 1.3em; text-decoration: none; transition: all 0.2s; }
+    .top-link:hover { background: var(--cyan); transform: scale(1.1); }
+  </style>
 </head>
 <body>
-<div class="floating-tags-hero" id="floating-tags"></div>
+  <div class="floating-tags-hero" id="floating-tags"></div>
 
-<header>
-  <div class="logo">Varnica Sharma</div>
-  <nav>
-    <a href="#home" class="active">Home</a>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <header>
+    <div class="logo">Varnica Sharma</div>
+    <nav>
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<section id="home" class="hero">
-  <div class="hero-content">
-    <div class="status-badge"><i class="bx bx-check-circle"></i> Available for Work</div>
-    <h1>
-      Data <span class="gradient-highlight">Scientist</span>
-    </h1>
-    <div class="typewriter">
-      <span id="typewriter"></span><span class="cursor">|</span>
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="status-badge"><i class="bx bx-check-circle"></i> Available for Work</div>
+      <h1>Data <span class="gradient-highlight">Scientist</span></h1>
+      <div class="typewriter"><span id="typewriter"></span><span class="cursor">|</span></div>
+      <p class="hero-desc">Transforming data into insight with <span>AI</span>, <span>bioinformatics</span>, and ML-powered analytics.</p>
+      <div class="cta-row"><a href="Varnica_Sharma_Resume.pdf" download class="btn primary"><i class="bx bx-download"></i> Download CV</a></div>
+      <div class="social-row">
+        <a href="https://www.linkedin.com/feed/" target="_blank" title="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://github.com/varnica-sharma" target="_blank" title="GitHub"><i class="bx bxl-github"></i></a>
+      </div>
     </div>
-    <p class="hero-desc">
-      Transforming data into insight with <span>AI</span>, <span>bioinformatics</span>, and ML-powered analytics.
-    </p>
-    <div class="cta-row">
-      <a href="Varnica_Sharma_Resume.pdf" download class="btn primary"
-        ><i class="bx bx-download"></i> Download CV</a
-      >
-    </div>
-    <div class="social-row">
-      <a href="https://www.linkedin.com/feed/" target="_blank" title="LinkedIn"
-        ><i class="bx bxl-linkedin"></i
-      ></a>
-      <a href="https://github.com/varnica-sharma" target="_blank" title="GitHub"
-        ><i class="bx bxl-github"></i
-      ></a>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="about">
-  <h2>About Me</h2>
-  <div class="about-btn-bar">
-    <button class="about-btn active" data-target="skills">Technical Skills</button>
-    <button class="about-btn" data-target="experience">Experience</button>
-    <button class="about-btn" data-target="education">Education</button>
-  </div>
-  <div id="about-content-skills" class="about-content-card active">
-    <div class="skill-category">
-      <h4><i class="bx bxl-python"></i> Programming & Data</h4>
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-btn-bar">
+      <button class="about-btn active" data-target="skills">Technical Skills</button>
+      <button class="about-btn" data-target="experience">Experience</button>
+      <button class="about-btn" data-target="education">Education</button>
+    </div>
+    <div id="about-content-skills" class="about-content-card active">
       <ul>
-        <li><strong>Python</strong>, R, SQL, Pandas, NumPy</li>
-        <li><strong>ML/AI:</strong> scikit-learn, PyTorch, TensorFlow</li>
-        <li><strong>Data Viz:</strong> Tableau, Excel</li>
+        <li><strong>Languages & Tools:</strong> Python, R, SQL, Pandas, NumPy, scikit-learn, PyTorch, TensorFlow</li>
+        <li><strong>Data Visualization:</strong> Streamlit, Tableau, Excel</li>
+        <li><strong>Specialties:</strong> Bioinformatics, Deep Learning, Healthcare AI, Predictive Modeling</li>
       </ul>
     </div>
-    <div class="skill-category">
-      <h4><i class="bx bx-brain"></i> Advanced Analytics</h4>
+    <div id="about-content-experience" class="about-content-card">
       <ul>
-        <li><strong>Bioinformatics</strong></li>
-        <li><strong>Deep Learning</strong></li>
-        <li><strong>Healthcare AI</strong></li>
+        <li><b>Data Science Intern</b>, Bharat Intern <em>(Sep-Oct 2023)</em><br>Developed healthcare ML models and created insightful data visualizations.</li>
+        <li><b>Data Science Intern</b>, Code Clause <em>(Oct-Nov 2023)</em><br>Applied statistical analysis on real-world datasets to support production decisions.</li>
       </ul>
     </div>
-  </div>
-  <div id="about-content-experience" class="about-content-card">
-    <ul>
-      <li><b>Data Science Intern</b>, Bharat Intern <em>(Sep-Oct 2023)</em><br />Healthcare ML models, data visualization.</li>
-      <li><b>Data Science Intern</b>, Code Clause <em>(Oct-Nov 2023)</em><br />Real-world datasets, statistical analysis, ML in production.</li>
-    </ul>
-  </div>
-  <div id="about-content-education" class="about-content-card">
-    <ul>
-      <li><b>M.Sc. Data Science</b>, MAHE <em>(2024-2026)</em></li>
-      <li><b>B.Sc. Computer Science</b> (2021-2024)<br />Focus: Statistics & Math, Data Science</li>
-    </ul>
-  </div>
-</section>
+    <div id="about-content-education" class="about-content-card">
+      <ul>
+        <li><b>M.Sc. Data Science</b>, Manipal Academy of Higher Education (MAHE) <em>(2024-2026)</em></li>
+        <li><b>B.Sc. Computer Science</b> <em>(2021-2024)</em><br>Focus on Statistics, Mathematics, and Data Science fundamentals.</li>
+      </ul>
+    </div>
+  </section>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="projects-grid">
-    <div class="project-card">
-      <div class="card-badge live">LIVE</div>
-      <h3>Multi-Omics Alzheimer Diagnosis</h3>
-      <p>
-        Predicts Alzheimer's stage from omics data with AI.<br />
-        Features: confidence graphs, Streamlit UI.
-      </p>
-      <div class="tags">
-        <span>GCN</span> <span>Streamlit</span> <span>Bioinformatics</span> <span>PyTorch</span>
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="card-badge live">LIVE</div>
+        <h3>Multi-Omics Alzheimer Diagnosis</h3>
+        <p>An AI-powered system that predicts Alzheimer's stage from complex omics data, featuring a user-friendly Streamlit UI and confidence graphs.</p>
+        <div class="tags"><span>GCN</span> <span>Streamlit</span> <span>Bioinformatics</span> <span>PyTorch</span></div>
+        <div class="project-links">
+          <a href="https://multi-omics-alzheimer-diagnosis.streamlit.app" target="_blank" class="btn main-btn">Live Demo</a>
+          <a href="https://github.com/varnica-sharma/Multi-Omics-Alzheimer-Diagnosis" target="_blank" class="btn link-btn">GitHub</a>
+        </div>
       </div>
-      <div class="project-links">
-        <a href="https://multi-omics-alzheimer-diagnosis.streamlit.app" target="_blank" class="btn main-btn">Live Demo</a>
-        <a href="https://github.com/varnica-sharma/Multi-Omics-Alzheimer-Diagnosis" target="_blank" class="btn link-btn">GitHub</a>
+      <div class="project-card">
+        <div class="card-badge live">LIVE</div>
+        <h3>Chemo-Response Predictor</h3>
+        <p>A machine learning model that predicts chemotherapeutic response in patients based on genetic and clinical features, with a clean deployment pipeline.</p>
+        <div class="tags"><span>ML</span> <span>Python</span> <span>Healthcare</span></div>
+        <div class="project-links">
+          <a href="https://github.com/varnica-sharma/Chemo-Response-Predictor?tab=readme-ov-file" target="_blank" class="btn main-btn">Demo</a>
+          <a href="https://github.com/varnica-sharma/Chemo-Response-Predictor" target="_blank" class="btn link-btn">GitHub</a>
+        </div>
       </div>
     </div>
-    <div class="project-card">
-      <div class="card-badge live">LIVE</div>
-      <h3>Chemo-Response Predictor</h3>
-      <p>
-        Predicts chemotherapeutic response using genetic and clinical features.<br />
-        ML-powered backend, clean deployment.
-      </p>
-      <div class="tags">
-        <span>ML</span> <span>Python</span> <span>Healthcare</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/varnica-sharma/Chemo-Response-Predictor?tab=readme-ov-file" target="_blank" class="btn main-btn">Demo</a>
-        <a href="https://github.com/varnica-sharma/Chemo-Response-Predictor" target="_blank" class="btn link-btn">GitHub</a>
-      </div>
+  </section>
+
+  <section id="contact">
+    <h2>Let's Connect</h2>
+    <div class="contact-methods">
+      <a class="contact-card" href="mailto:varnicasharma1515@gmail.com" target="_blank"><i class="bx bx-envelope"></i>Email</a>
+      <a class="contact-card" href="tel:+919000000000"><i class="bx bx-phone"></i>Call</a>
+      <a class="contact-card" href="https://www.linkedin.com/feed/" target="_blank"><i class="bx bxl-linkedin"></i>LinkedIn</a>
     </div>
-  </div>
-</section>
+    <p style="text-align: center; margin-top: 1.5rem;">Ready for new roles, projects, or research collaborations!</p>
+  </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="contact-methods">
-    <a class="contact-card" href="mailto:varnicasharma1515@gmail.com" target="_blank"
-      ><i class="bx bx-envelope"></i>Email</a
-    >
-    <a class="contact-card" href="tel:+919000000000"><i class="bx bx-phone"></i>Call</a>
-    <a class="contact-card" href="https://www.linkedin.com/feed/" target="_blank"
-      ><i class="bx bxl-linkedin"></i>LinkedIn</a
-    >
-  </div>
-  <p>Let's connect for jobs, projects, or research collaborations!</p>
-</section>
+  <footer>
+    <span>&copy; 2025 Varnica Sharma</span>
+    <a href="#home" class="top-link" title="Back to Top"><i class="bx bx-up-arrow-alt"></i></a>
+  </footer>
 
-<footer>
-  <span>&copy; 2025 Varnica Sharma</span>
-  <a href="#home" class="top-link" title="Back to Top"
-    ><i class="bx bx-up-arrow-alt"></i
-  ></a>
-</footer>
+  <!-- ALL JAVASCRIPT EMBEDDED HERE -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tags = [
+        "Machine Learning", "Bioinformatics", "Graph Networks", "Deep Learning",
+        "Data Mining", "Streamlit", "PyTorch", "Healthcare AI", "Statistics", "Visualization",
+        "R Programming", "ML Ops", "Predictive Modeling", "Analytics", "Data Engineering"
+      ];
+      const heroTagPositions = [
+        [30, 15], [85, 13], [60, 25], [140, 60], [100, 80],
+        [55, 78], [120, 50], [170, 26], [180, 70], [115, 10],
+        [180, 40], [95, 60], [160, 85], [53, 51], [130, 44]
+      ];
+      const tagsContainer = document.getElementById('floating-tags');
+      tags.forEach((text, idx) => {
+        const tag = document.createElement('div');
+        tag.className = 'float-tag';
+        tag.style.top = heroTagPositions[idx][0] + 'px';
+        tag.style.left = `calc(${heroTagPositions[idx][1]}vw)`;
+        tag.style.animationDelay = (idx * 0.3) + 's';
+        tag.innerHTML = `<i class='bx bx-badge-check'></i> ${text}`;
+        tagsContainer.appendChild(tag);
+      });
 
-<script src="main.js"></script>
+      const roles = [
+        "Healthcare Data Specialist", "Bioinformatics Enthusiast",
+        "AI & ML Innovator", "Predictive Modeling Pro"
+      ];
+      let roleIndex = 0, charIndex = 0, deleting = false;
+      function typeWriter() {
+        const el = document.getElementById('typewriter');
+        if (!el) return;
+        const current = roles[roleIndex];
+        el.style.color = (roleIndex % 2 === 0) ? "#856ad3" : "#74e4ae";
+        if (!deleting) {
+          el.textContent = current.substring(0, charIndex + 1);
+          if (++charIndex === current.length) {
+            deleting = true;
+            setTimeout(typeWriter, 1200); return;
+          }
+        } else {
+          el.textContent = current.substring(0, charIndex - 1);
+          if (--charIndex === 0) {
+            deleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+          }
+        }
+        setTimeout(typeWriter, deleting ? 43 : 111);
+      }
+      typeWriter();
+
+      const aboutTabs = document.querySelectorAll('.about-btn');
+      const aboutCards = document.querySelectorAll('.about-content-card');
+      aboutTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          aboutTabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          aboutCards.forEach(card => card.classList.remove('active'));
+          document.getElementById('about-content-' + tab.dataset.target).classList.add('active');
+        });
+      });
+
+      window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('header nav a');
+        let cur = '';
+        sections.forEach(sec => {
+          if (window.scrollY + 110 >= sec.offsetTop) cur = sec.id;
+        });
+        navLinks.forEach(a => {
+          a.classList.remove('active');
+          if (a.getAttribute('href') === '#' + cur) a.classList.add('active');
+        });
+      });
+    });
+  </script>
 </body>
 </html>
